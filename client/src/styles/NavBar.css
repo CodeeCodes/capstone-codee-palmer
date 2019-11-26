@@ -1,0 +1,9 @@
+.navBar {
+  width: 100vw;
+  background-color: grey;
+}
+
+.navBar__button {
+  color: navy;
+}
+/*# sourceMappingURL=NavBar.css.map */
