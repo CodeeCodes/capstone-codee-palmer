@@ -22,8 +22,32 @@ body a {
           box-sizing: inherit;
 }
 
+/* Media Query: Tablet */
+/* Media Query: Desktop */
 .map {
+  width: 90%;
+  height: 65%;
+  border-radius: 20px;
+}
+
+.map__main {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .map {
+    width: 60%;
+    height: 70%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,18 @@
+.map {
+  width: 90%;
+  height: 65%;
+  border-radius: 20px;
+  &__main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@include medium {
+  .map {
+    width: 60%;
+    height: 70%;
+  }
+}

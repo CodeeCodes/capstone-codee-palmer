@@ -20,8 +20,5 @@ body {
 *:after {
   box-sizing: inherit;
 }
-
-.map {
-  width: 100vw;
-  height: 100vh;
-}
+@import "./partials/breakpoints";
+@import "./partials/fitMap";
