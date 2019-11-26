@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
 export default function FitMap() {
+  const stylesArray = GoogleMapsStyles;
   const [cords, setCords] = useState({
     lat: 49.2827,
     lng: 123.1207
@@ -18,8 +19,9 @@ export default function FitMap() {
   };
   const initMap = () => {
     const map = new window.google.maps.Map(document.querySelector(".map"), {
-      center: { lat: 49.2827, lng: 123.1207 },
-      zoom: 8
+      center: { lat: 49.2827, lng: -123.1207 },
+      zoom: 13,
+      styles: stylesArray
     });
   };
 
