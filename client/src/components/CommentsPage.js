@@ -6,10 +6,26 @@ export default function CommentsPage() {
   const [comments, setComments] = useState({
     comments: []
   });
+
+  const uploadNewComment = event => {
+    event.preventDefault();
+    if (!event.target.name.value || !event.target.comment.value) {
+      alert("Please enter all fields. Thank you!");
+    } else {
+      axios
+        .post(commentsUrl, {
+          name: event.target.name.value,
+          comment: event.target.comment.value
+        })
+        .then(res => {
+          event.target.reset();
+        });
+    }
+  };
   useEffect(() => {
     axios.get(commentsUrl).then(res => setComments(res.data));
   }, []);
-  console.log(comments);
+
   let newComment;
   if (comments.length > 0) {
     newComment = comments.map(function(comment) {
@@ -24,6 +40,34 @@ export default function CommentsPage() {
   } else {
     return "loading...";
   }
-  //   console.log(comments.comments);
-  return <div className="comments__page">{newComment}</div>;
+
+  return (
+    <div className="comments__page">
+      <form
+        action="/"
+        method="POST"
+        onSubmit={uploadNewComment}
+        className="new__comments-form"
+      >
+        <h4 className="popUpForm__heading-small">Name</h4>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          className="new__comment-input"
+        />
+        <h4 className="popUpForm__heading-small">Comment</h4>
+        <input
+          type="text"
+          name="comment"
+          placeholder="Comment"
+          className="new__comment-input"
+        />
+        <div>
+          <button className="new__comments-button">SAVE</button>
+        </div>
+      </form>
+      {newComment}
+    </div>
+  );
 }

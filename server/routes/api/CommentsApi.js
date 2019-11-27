@@ -15,5 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 router.get("/", (req, res) => {
   res.json(comments);
 });
-
+router.post("/", (req, res) => {
+  const newComments = {
+    id: uuid(),
+    name: req.body.name,
+    comment: req.body.comment,
+    date: new Date()
+  };
+  comments.push(newComments);
+  helper.writeJSONFile(commentsData, comments);
+});
 module.exports = router;
