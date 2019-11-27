@@ -50,4 +50,59 @@ body a {
     height: 70%;
   }
 }
+
+.navBar {
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 80px;
+  background-color: #fff;
+}
+
+.navBar__button {
+  background-color: #8c92ac;
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.front__page {
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 2px;
+          perspective: 2px;
+  background-image: "./assets/unsplashRoad.jpg";
+}
+
+.front__page-div {
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.front__page-div-One {
+  background-image: "./assets/unsplashRoad.jpg";
+}
 /*# sourceMappingURL=main.css.map */

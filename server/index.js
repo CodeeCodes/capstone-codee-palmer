@@ -10,7 +10,7 @@ app.use(express.json());
 
 /// Const routers
 // Template:
-// const Router = require("./routes/api/");
+const commentsRouter = require("./routes/api/CommentsApi");
 
 /// Simple API Documentation
 app.get("/", (req, res) => {
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 /// Link Route Files
 // Template:
-// app.use("/comments", Router);
+app.use("/comments", commentsRouter);
 
 app.listen(PORT, () => {
   console.log(`Now listening on port ${PORT}`);

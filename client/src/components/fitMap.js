@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+// import axios from "axios";
 import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
 import runningIcon from "../assets/iconRunning.png";
 export default function FitMap() {
   const stylesArray = GoogleMapsStyles;
-  // const [cords, setCords] = useState({
-  //   lat: 49.2827,
-  //   lng: 123.1207
-  // });
+  const [cords, setCords] = useState({
+    cords: []
+  });
 
   useEffect(() => {
     renderMap();
+    // const getRunsUrl = `http://www.RunReg.com/api/search?`;
+    // const renderRuns = axios.get(getRunsUrl).then(res => {
+    //   console.log(res);
+    // });
   });
   // const apiKey = "AIzaSyB0ebv97Ph2LJRAvh9fO6Sd3F7gVxGp1ss";
   // const googleFindUrl = `https://www.googleapis.com/geolocation/v1/geolocate?key=${apiKey}`;
@@ -27,11 +30,17 @@ export default function FitMap() {
   const initMap = () => {
     const map = new window.google.maps.Map(document.querySelector(".map"), {
       center: { lat: 49.2827, lng: -123.1207 },
-      zoom: 13,
+      zoom: 12,
       styles: stylesArray
     });
     let marker = new window.google.maps.Marker({
       position: { lat: 49.2827, lng: -123.1207 },
+      map: map,
+      title: "Hello Vancouver",
+      icon: runningIcon
+    });
+    let markerTwo = new window.google.maps.Marker({
+      position: { lat: 49.304, lng: -123.1568 },
       map: map,
       title: "Hello Vancouver",
       icon: runningIcon

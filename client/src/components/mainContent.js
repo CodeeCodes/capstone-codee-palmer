@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import FitMap from "./FitMap";
+import React from "react";
+import FitMap from "./fitMap";
+import Comments from "./CommentsPage";
 
 export default function MainContent() {
-  const [comments, setComments] = useState({
-    comments: []
-  });
-
   return (
     <div className="main">
       <FitMap />
+      <Comments />
     </div>
   );
 }
