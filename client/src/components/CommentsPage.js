@@ -29,7 +29,7 @@ export default function CommentsPage() {
   }, []);
 
   let newComment;
-  if (comments.length > 0) {
+  if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
       return (
         <div className="new__comment" key={comment.id}>
@@ -46,7 +46,6 @@ export default function CommentsPage() {
   } else {
     return "loading...";
   }
-
   return (
     <div className="comments__page">
       <form

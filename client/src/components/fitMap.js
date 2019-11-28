@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect} from "react";
+// import axios from "axios";
 import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
 import runningIcon from "../assets/iconRunning.png";
 
 export default function FitMap() {
   const stylesArray = GoogleMapsStyles;
-  const [cords, setCords] = useState({
-    cords: []
-  });
+  // const [cords, setCords] = useState({
+  //   cords: []
+  // });
   // const cors = "https://cors-anywhere.herokuapp.com/";
 
   useEffect(() => {
     renderMap();
-    // const getRunsUrl = `http://www.RunReg.com/api/search?`;
-    // const renderRuns = axios.get(getRunsUrl).then(res => {
-    //   console.log(res);
-    // });
+    // renderRuns();
   });
-  // useEffect(() => {
-
-  // }), [];
-  // const apiKey = "AIzaSyB0ebv97Ph2LJRAvh9fO6Sd3F7gVxGp1ss";
-  // const googleFindUrl = `https://www.googleapis.com/geolocation/v1/geolocate?key=${apiKey}`;
-  // const findRunner = axios.get(googleFindUrl).then(res => {
-  //   console.log(res);
-  // });
-  // });
+  // const renderRuns = () => {
+  //   const getRunsUrl = `http://www.RunReg.com/api/search?`;
+  //   const renderRuns = axios.get(getRunsUrl).then(res => {
+  //     console.log(res);
+  //   });
+  // };
 
   const renderMap = () => {
     loadScript(
