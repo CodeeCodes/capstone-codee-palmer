@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
 import runningIcon from "../assets/iconRunning.png";
+
 export default function FitMap() {
   const stylesArray = GoogleMapsStyles;
   const [cords, setCords] = useState({
     cords: []
   });
+  // const cors = "https://cors-anywhere.herokuapp.com/";
 
   useEffect(() => {
     renderMap();
@@ -15,10 +17,14 @@ export default function FitMap() {
     //   console.log(res);
     // });
   });
+  // useEffect(() => {
+
+  // }), [];
   // const apiKey = "AIzaSyB0ebv97Ph2LJRAvh9fO6Sd3F7gVxGp1ss";
   // const googleFindUrl = `https://www.googleapis.com/geolocation/v1/geolocate?key=${apiKey}`;
   // const findRunner = axios.get(googleFindUrl).then(res => {
   //   console.log(res);
+  // });
   // });
 
   const renderMap = () => {
@@ -49,7 +55,6 @@ export default function FitMap() {
 
   return (
     <div className="map__main">
-      {" "}
       <div className="map"></div>
     </div>
   );

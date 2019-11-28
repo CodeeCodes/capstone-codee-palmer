@@ -3,9 +3,7 @@ import axios from "axios";
 
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
-  const [comments, setComments] = useState({
-    comments: []
-  });
+  const [comments, setComments] = useState([]);
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -18,12 +16,16 @@ export default function CommentsPage() {
           comment: event.target.comment.value
         })
         .then(res => {
-          event.target.reset();
+          setComments(res.data);
         });
+      event.target.reset();
     }
   };
-  useEffect(() => {
+  const newComments = async () => {
     axios.get(commentsUrl).then(res => setComments(res.data));
+  };
+  useEffect(() => {
+    newComments();
   }, []);
 
   let newComment;
@@ -31,9 +33,13 @@ export default function CommentsPage() {
     newComment = comments.map(function(comment) {
       return (
         <div className="new__comment" key={comment.id}>
-          <h4 className="new__comment-name">{comment.name}</h4>
+          <div className="new__comment-small-div">
+            <h4 className="new__comment-name">{comment.name}</h4>
+            <p className="new__comment-date">{comment.date}</p>
+          </div>
           <p className="new__comment-text">{comment.comment}</p>
-          <p className="new__comment-date">{comment.date}</p>
+          <button className="new__comment-button-small">Delete</button>
+          <button className="new__comment-button-small">Edit</button>
         </div>
       );
     });
@@ -64,7 +70,7 @@ export default function CommentsPage() {
           className="new__comment-input"
         />
         <div>
-          <button className="new__comments-button">SAVE</button>
+          <button className="new__comment-button">SAVE</button>
         </div>
       </form>
       {newComment}

@@ -18,11 +18,12 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   const newComments = {
     id: uuid(),
+    date: new Date().toLocaleDateString(),
     name: req.body.name,
-    comment: req.body.comment,
-    date: new Date()
+    comment: req.body.comment
   };
   comments.push(newComments);
   helper.writeJSONFile(commentsData, comments);
+  res.json(comments);
 });
 module.exports = router;

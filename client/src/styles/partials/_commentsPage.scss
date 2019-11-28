@@ -3,7 +3,37 @@
 }
 .new__comment {
   width: 100%;
-  height: 80px;
-  background-color: lightgrey;
+  height: 95px;
+  background-color: rgb(238, 236, 236);
   border-radius: 5px;
+  margin: 15px 0;
+  &-input {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(238, 236, 236);
+    border-radius: 5px;
+  }
+  &-button {
+    width: 100%;
+    background-color: rgb(197, 196, 196);
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  &-small-div {
+    display: flex;
+  }
+  &-name {
+    height: 15px;
+    margin: 0;
+    margin-right: 40%;
+  }
+  &-date {
+    height: 15px;
+    margin: 0;
+  }
+  &-button-small {
+    width: 20%;
+    background-color: rgb(197, 196, 196);
+    border-radius: 5px;
+  }
 }
