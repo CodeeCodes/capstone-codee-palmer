@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 // import axios from "axios";
 import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
 import runningIcon from "../assets/iconRunning.png";
@@ -33,17 +33,29 @@ export default function FitMap() {
       zoom: 12,
       styles: stylesArray
     });
+    let infowindow = new window.google.maps.InfoWindow({
+      content: "Start your run"
+    });
     let marker = new window.google.maps.Marker({
       position: { lat: 49.2827, lng: -123.1207 },
       map: map,
       title: "Hello Vancouver",
       icon: runningIcon
     });
+    marker.addListener("click", function() {
+      infowindow.open(map, marker);
+    });
+    let infowindowTwo = new window.google.maps.InfoWindow({
+      content: "End your run"
+    });
     let markerTwo = new window.google.maps.Marker({
       position: { lat: 49.304, lng: -123.1568 },
       map: map,
       title: "Hello Vancouver",
       icon: runningIcon
+    });
+    marker.addListener("click", function() {
+      infowindowTwo.open(map, markerTwo);
     });
   };
 

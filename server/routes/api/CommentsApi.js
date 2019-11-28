@@ -13,21 +13,33 @@ let Comment = require(commentsData);
 app.use(express.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
-  Comment.find()
-    .sort({ date: -1 })
-    .then(comments => res.json(comments));
+  try {
+    Comment.find()
+      .sort({ date: -1 })
+      .then(comments => res.json(comments));
+  } catch (er) {
+    console.log("Error fetching data", er);
+    res.json(500).send(er);
+  }
 });
 router.post("/", (req, res) => {
   const newComments = new Comment({
-    id: uuid(),
-    date: new Date().toLocaleDateString(),
     name: req.body.name,
     comment: req.body.comment
   });
 
   newComments.save().then(comment => res.json(comment));
-  // Comment.push(newComments);
-  // helper.writeJSONFile(commentsData, Comment);
-  // res.json(Comment);
+});
+router.delete("/:id", (req, res) => {
+  console.log(req.params.id);
+  Comment.findById(req.params.id).then(comment =>
+    comment
+      .remove()
+      .then(() =>
+        res
+          .json({ success: true })
+          .catch(er => res.status(404).json({ success: false }))
+      )
+  );
 });
 module.exports = router;

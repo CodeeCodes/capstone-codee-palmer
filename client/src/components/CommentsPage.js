@@ -21,6 +21,13 @@ export default function CommentsPage() {
       event.target.reset();
     }
   };
+  console.log(comments);
+  // const ID = comments._id;
+  const deleteComment = e => {
+    axios
+      .delete(`${commentsUrl}/${e.target.id}`)
+      .then(res => setComments(res.data));
+  };
   const newComments = async () => {
     axios.get(commentsUrl).then(res => setComments(res.data));
   };
@@ -31,14 +38,26 @@ export default function CommentsPage() {
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
+      // let timeStamp = comment.date;
+      // let toDate = new Date(timeStamp).getDate();
+      // let toMonth = new Date(timeStamp).getMonth() + 1;
+      // let toYear = new Date(timeStamp).getFullYear();
+      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
+
       return (
-        <div className="new__comment" key={comment.id}>
+        <div className="new__comment" key={comment._id}>
           <div className="new__comment-small-div">
             <h4 className="new__comment-name">{comment.name}</h4>
             <p className="new__comment-date">{comment.date}</p>
           </div>
           <p className="new__comment-text">{comment.comment}</p>
-          <button className="new__comment-button-small">Delete</button>
+          <button
+            id={comment._id}
+            className="new__comment-button-small"
+            onClick={deleteComment}
+          >
+            Delete
+          </button>
           <button className="new__comment-button-small">Edit</button>
         </div>
       );
@@ -46,6 +65,7 @@ export default function CommentsPage() {
   } else {
     return "loading...";
   }
+  console.log();
   return (
     <div className="comments__page">
       <form

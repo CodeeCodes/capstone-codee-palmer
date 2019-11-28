@@ -68,13 +68,6 @@ body a {
   background-color: #fff;
 }
 
-.navBar__button {
-  background-color: #8c92ac;
-  width: 90%;
-  height: 50px;
-  border-radius: 10px;
-}
-
 .front__page {
   z-index: -1;
   height: 100vh;

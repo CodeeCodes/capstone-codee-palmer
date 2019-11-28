@@ -13,7 +13,11 @@ app.use(express.json());
 const db = require("./config/keys").mongoURI;
 // connect to mongo
 mongoose
-  .connect(db, { useNewUrlParser: true, useCreateIndex: true })
+  .connect(db, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+  })
   .then(() => console.log("mongoDB is connected"))
   .catch(err => console.log(err));
 

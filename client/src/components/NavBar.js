@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-function NavBar() {
-  return <div className="navBar"></div>;
+
+function Header(props) {
+  const [state, setState] = useState(true);
+
+  const toggle = () => {
+    setState(!state);
+  };
+  return (
+    <div className="navBar">
+     <h2 className="navBar––heading">SPRINT</h2>
+    </div>
+  );
 }
 
-export default NavBar;
+export default Header;
