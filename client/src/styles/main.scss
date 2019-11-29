@@ -13,6 +13,11 @@ body {
     color: #323232;
   }
 }
+body {
+  background: url("../assets/jakub-kriz-3FFEdm8TOek-unsplash.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+}
 
 /* Enforces border-box for whole site */
 *,
@@ -20,6 +25,7 @@ body {
 *:after {
   box-sizing: inherit;
 }
+
 @import "./partials/breakpoints";
 @import "./partials/fitMap";
 @import "./partials/navigationBar";

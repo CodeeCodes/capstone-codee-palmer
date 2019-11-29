@@ -21,19 +21,26 @@ export default function CommentsPage() {
       event.target.reset();
     }
   };
-  console.log(comments);
-  // const ID = comments._id;
-  const deleteComment = e => {
-    axios
+  // console.log(comments);
+
+  const deleteComment = async e => {
+    await axios
       .delete(`${commentsUrl}/${e.target.id}`)
       .then(res => setComments(res.data));
   };
   const newComments = async () => {
-    axios.get(commentsUrl).then(res => setComments(res.data));
+    await axios.get(commentsUrl).then(res => setComments(res.data));
   };
   useEffect(() => {
     newComments();
   }, []);
+  const useForceUpdate = () => useState()[1];
+
+  const forceUpdate = useForceUpdate();
+  const onClick = () => {
+    // forceUpdate();
+    deleteComment();
+  };
 
   let newComment;
   if (comments.length >= 0) {
@@ -45,51 +52,53 @@ export default function CommentsPage() {
       // let originalDate = toMonth + "/" + toDate + "/" + toYear;
 
       return (
-        <div className="new__comment" key={comment._id}>
-          <div className="new__comment-small-div">
-            <h4 className="new__comment-name">{comment.name}</h4>
-            <p className="new__comment-date">{comment.date}</p>
+        <div className="new__comments" key={comment._id}>
+          <div className="new__comments-small-div">
+            <h4 className="new__comments-name">{comment.name}</h4>
+            <p className="new__comments-date">{comment.date}</p>
           </div>
-          <p className="new__comment-text">{comment.comment}</p>
+          <p className="new__comments-text">{comment.comment}</p>
           <button
             id={comment._id}
-            className="new__comment-button-small"
+            className="new__comments-button-small"
             onClick={deleteComment}
           >
             Delete
           </button>
-          <button className="new__comment-button-small">Edit</button>
+          <button className="new__comments-button-small">Edit</button>
         </div>
       );
     });
   } else {
     return "loading...";
   }
-  console.log();
+  // console.log();
   return (
     <div className="comments__page">
+      <div className="new__comments-page-heading-div">
+      <h1 className="new__comments-page-heading">Chat</h1></div>
       <form
         action="/"
         method="POST"
         onSubmit={uploadNewComment}
         className="new__comments-form"
       >
-        <h4 className="popUpForm__heading-small">Name</h4>
+        <h4 className="new__comments-heading-small">Name</h4>
         <input
           type="text"
           name="name"
           placeholder="Name"
-          className="new__comment-input"
+          className="new__comments-input-name"
         />
-        <h4 className="popUpForm__heading-small">Comment</h4>
+        <h4 className="new__comments-heading-small">Comment</h4>
         <input
           type="text"
           name="comment"
           placeholder="Comment"
-          className="new__comment-input"
+          className="new__comments-input"
         />
-        <div>
-          <button className="new__comment-button">SAVE</button>
+        <div className="new__comments-button-div">
+          <button className="new__comments-button">SAVE</button>
         </div>
       </form>
       {newComment}

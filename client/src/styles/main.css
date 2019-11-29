@@ -14,6 +14,11 @@ body a {
   color: #323232;
 }
 
+body {
+  background: url("../assets/jakub-kriz-3FFEdm8TOek-unsplash.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* Enforces border-box for whole site */
 *,
 *:before,
@@ -63,9 +68,14 @@ body a {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  margin-bottom: 10px;
   width: 100vw;
   height: 80px;
-  background-color: #fff;
+  background-color: #da5353;
+}
+
+.navBar__heading {
+  margin-right: 5%;
 }
 
 .front__page {
@@ -101,51 +111,123 @@ body a {
 
 .comments__page {
   margin: 10px 5%;
+  background-color: #585858;
+  border-radius: 10px;
 }
 
-.new__comment {
+.new__comments {
   width: 100%;
   height: 95px;
-  background-color: #eeecec;
-  border-radius: 5px;
+  background-color: #727272;
+  border: 1px solid #da5353;
   margin: 15px 0;
+  border-radius: 5px;
 }
 
-.new__comment-input {
+.new__comments-input {
+  width: 100%;
+  height: 100px;
+  background-color: #727272;
+  border-radius: 5px;
+}
+
+.new__comments-input-name {
   width: 100%;
   height: 50px;
-  background-color: #eeecec;
+  background-color: #727272;
   border-radius: 5px;
 }
 
-.new__comment-button {
-  width: 100%;
-  background-color: #c5c4c4;
+.new__comments-page-heading-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new__comments-button {
+  width: 66%;
+  height: 30px;
+  background-color: #da5353;
+  color: #fff;
   border-radius: 5px;
   margin-top: 20px;
 }
 
-.new__comment-small-div {
+.new__comments-button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.new__comments-small-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.new__comment-name {
+.new__comments-name {
   height: 15px;
   margin: 0;
-  margin-right: 40%;
+  margin-right: 10%;
 }
 
-.new__comment-date {
+.new__comments-date {
   height: 15px;
   margin: 0;
 }
 
-.new__comment-button-small {
+.new__comments-button-small {
   width: 20%;
-  background-color: #383c47;
+  background-color: #da5353;
   border-radius: 10px;
   color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments__page {
+    width: 50%;
+  }
+  .comments__page .new__comments {
+    width: 60%;
+    height: 95px;
+  }
+  .comments__page .new__comments-input {
+    width: 60%;
+    height: 95px;
+  }
+  .comments__page .new__comments-input-name {
+    width: 60%;
+    height: 45px;
+  }
+  .comments__page .new__comments-button {
+    width: 30%;
+    height: 25px;
+    margin-left: 5%;
+  }
+  .comments__page .new__comments-button-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__page .new__comments-page-heading-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */

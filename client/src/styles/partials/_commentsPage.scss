@@ -1,23 +1,44 @@
 .comments__page {
   margin: 10px 5%;
+  background-color: rgb(88, 88, 88);
+  border-radius: 10px;
 }
-.new__comment {
+.new__comments {
   width: 100%;
   height: 95px;
-  background-color: rgb(238, 236, 236);
-  border-radius: 5px;
+  background-color: rgb(114, 114, 114);
+  border: 1px solid rgb(218, 83, 83);
   margin: 15px 0;
+  border-radius: 5px;
   &-input {
     width: 100%;
-    height: 50px;
-    background-color: rgb(238, 236, 236);
+    height: 100px;
+    background-color: rgb(114, 114, 114);
     border-radius: 5px;
+
+    &-name {
+      width: 100%;
+      height: 50px;
+      background-color: rgb(114, 114, 114);
+      border-radius: 5px;
+    }
+  }
+  &-page-heading-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &-button {
-    width: 100%;
-    background-color: rgb(197, 196, 196);
+    width: 66%;
+    height: 30px;
+    background-color: rgb(218, 83, 83);
+    color: #fff;
     border-radius: 5px;
     margin-top: 20px;
+    &-div {
+      display: flex;
+      justify-content: center;
+    }
   }
   &-small-div {
     display: flex;
@@ -25,7 +46,7 @@
   &-name {
     height: 15px;
     margin: 0;
-    margin-right: 40%;
+    margin-right: 10%;
   }
   &-date {
     height: 15px;
@@ -33,8 +54,45 @@
   }
   &-button-small {
     width: 20%;
-    background-color: #383c47;
+    background-color: rgb(218, 83, 83);
     border-radius: 10px;
     color: #fff;
+  }
+}
+@include medium {
+  .comments__page {
+    width: 50%;
+    .new__comments {
+      width: 60%;
+      height: 95px;
+      &-input {
+        width: 60%;
+        height: 95px;
+
+        &-name {
+          width: 60%;
+          height: 45px;
+        }
+      }
+      &-button {
+        width: 30%;
+        height: 25px;
+        margin-left: 5%;
+        &-div {
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+      &-page-heading {
+        &-div {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &-heading {
+        &-small {
+        }
+      }
+    }
   }
 }

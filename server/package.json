@@ -19,6 +19,7 @@
     "fs": "0.0.1-security",
     "mongoose": "^5.7.12",
     "nodemon": "^2.0.1",
+    "react-here-maps": "^0.4.0",
     "uuid": "^3.3.3",
     "uuidv4": "^6.0.0"
   }
