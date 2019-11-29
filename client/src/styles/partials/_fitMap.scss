@@ -12,7 +12,13 @@
 }
 @include medium {
   .map {
-    width: 60%;
+    width: 100%;
     height: 70%;
+
+    &__main {
+      margin: 10px 5%;
+      width: 50%;
+      height: 400px;
+    }
   }
 }

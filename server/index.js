@@ -24,6 +24,7 @@ mongoose
 /// Const routers
 // Template:
 const commentsRouter = require("./routes/api/CommentsApi");
+const routesRouter = require("./routes/api/RunningRoutesApi");
 
 /// Simple API Documentation
 app.get("/", (req, res) => {
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
 /// Link Route Files
 // Template:
 app.use("/comments", commentsRouter);
+app.use("/routes", routesRouter);
 
 app.listen(PORT, () => {
   console.log(`Now listening on port ${PORT}`);

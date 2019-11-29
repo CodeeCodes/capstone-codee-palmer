@@ -75,8 +75,7 @@ export default function CommentsPage() {
   // console.log();
   return (
     <div className="comments__page">
-      <div className="new__comments-page-heading-div">
-      <h1 className="new__comments-page-heading">Chat</h1></div>
+      {newComment}
       <form
         action="/"
         method="POST"
@@ -101,7 +100,6 @@ export default function CommentsPage() {
           <button className="new__comments-button">SAVE</button>
         </div>
       </form>
-      {newComment}
     </div>
   );
 }

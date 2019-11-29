@@ -7,39 +7,40 @@ const uuid = require("uuid");
 const app = express();
 
 // / Initialize Files, File Data
-const commentsData = `${__dirname}` + "/model/comments.js";
-let Comment = require(commentsData);
+const routesData = `${__dirname}` + "/model/runningRoutes.js";
+let Routes = require(routesData);
 
 app.use(express.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
   try {
-    Comment.find()
+    Routes.find()
       .sort({ date: 1 })
-      .then(comments => res.json(comments));
+      .then(route => res.json(route));
   } catch (er) {
     console.log("Error fetching data", er);
     res.json(500).send(er);
   }
 });
 router.post("/", (req, res) => {
-  const newComments = new Comment({
+  const newRoute = new Routes({
     name: req.body.name,
+    age: req.body.age,
     comment: req.body.comment
   });
 
-  newComments.save().then(comment => res.json(comment));
+  newRoute.save().then(route => res.json(route));
 });
-router.delete("/:id", (req, res) => {
-  console.log(req.params.id);
-  Comment.findById(req.params.id).then(comment =>
-    comment
-      .remove()
-      .then(() =>
-        res
-          .json({ success: true })
-          .catch(er => res.status(404).json({ success: false }))
-      )
-  );
-});
+// router.delete("/:id", (req, res) => {
+//   console.log(req.params.id);
+//   Router.findById(req.params.id).then(route =>
+//     route
+//       .remove()
+//       .then(() =>
+//         res
+//           .json({ success: true })
+//           .catch(er => res.status(404).json({ success: false }))
+//       )
+//   );
+// });
 module.exports = router;

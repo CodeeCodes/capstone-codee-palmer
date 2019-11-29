@@ -18,16 +18,7 @@ function Header(props) {
       >
         <h2>SPRINT</h2>
       </NavLink>
-      <NavLink
-        className="navBar__heading"
-        to="/mapPage"
-        activeStyle={{
-          color: "$white",
-          borderBottom: "3px solid $white"
-        }}
-      >
-        <h3>ROUTES</h3>
-      </NavLink>
+     
     </div>
   );
 }

@@ -8,10 +8,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        <Route exact path="/mapPage" component={FitMap} />
-        <Route exact path="/homePage" component={MainContent} />
-      </Switch>
+      <MainContent />
+      {/* <Switch> */}
+        {/* <Route exact path="/mapPage" component={FitMap} /> */}
+        {/* <Route exact path="/homePage" component={MainContent} /> */}
+      {/* </Switch> */}
     </div>
   );
 }
