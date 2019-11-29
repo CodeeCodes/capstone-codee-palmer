@@ -37,10 +37,6 @@ export default function CommentsPage() {
   const useForceUpdate = () => useState()[1];
 
   const forceUpdate = useForceUpdate();
-  const onClick = () => {
-    // forceUpdate();
-    deleteComment();
-  };
 
   let newComment;
   if (comments.length >= 0) {

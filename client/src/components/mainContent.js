@@ -6,11 +6,15 @@ import RunningRoutes from "./runningRoutesFront";
 
 export default function MainContent() {
   return (
-    <div className="main">
-      <Comments />
-      <WeatherPage />
-      <FitMap />
-      <RunningRoutes />
+    <div className="main-flex">
+      <div className="main-flex-side">
+        <WeatherPage />
+        <Comments />
+      </div>
+      <div className="main-flex-side">
+        <FitMap />
+        <RunningRoutes />
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ body {
   color: #323232;
   height: 100vh;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html a,
@@ -15,7 +15,8 @@ body a {
 }
 
 body {
-  background: url("../assets/jakub-kriz-3FFEdm8TOek-unsplash.jpg") no-repeat center center fixed;
+  background: url("../assets/jakub-kriz-3FFEdm8TOek-unsplash.jpg") no-repeat
+    center center fixed;
   background-size: cover;
 }
 
@@ -24,7 +25,7 @@ body {
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* Media Query: Tablet */
@@ -37,7 +38,6 @@ body {
 
 .new__routes {
   width: 100%;
-  height: 95px;
   background-color: #727272;
   border: 1px solid #da5353;
   margin: 15px 0;
@@ -63,11 +63,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .new__routes-button {
@@ -84,8 +84,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .new__routes-small-div {
@@ -113,41 +113,42 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  .comments__page {
-    width: 50%;
+  .running__page {
+    width: 70%;
+    padding: 0 5%;
   }
-  .comments__page .new__comments {
-    width: 60%;
+  .new__routes {
+    width: 100%;
+    border: none;
+  }
+  .new__routes-input {
+    width: 100%;
     height: 95px;
   }
-  .comments__page .new__comments-input {
-    width: 60%;
-    height: 95px;
-  }
-  .comments__page .new__comments-input-name {
-    width: 60%;
+  .new__routes-input-name {
+    width: 100%;
     height: 45px;
   }
-  .comments__page .new__comments-button {
+  .new__routes-button {
     width: 30%;
     height: 25px;
     margin-left: 5%;
   }
-  .comments__page .new__comments-button-div {
+  .new__routes-button-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
-  .comments__page .new__comments-page-heading-div {
+  .new__routes-page-heading-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -164,11 +165,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -178,7 +179,7 @@ body {
   }
   .map__main {
     margin: 10px 5%;
-    width: 50%;
+    width: 70%;
     height: 400px;
   }
 }
@@ -189,11 +190,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   margin-bottom: 10px;
   width: 100vw;
@@ -212,7 +213,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 2px;
-          perspective: 2px;
+  perspective: 2px;
   background-image: "./assets/unsplashRoad.jpg";
 }
 
@@ -223,17 +224,28 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: white;
   text-shadow: 0 0 5px #000;
 }
 
 .front__page-div-One {
   background-image: "./assets/unsplashRoad.jpg";
+}
+
+@media only screen and (min-width: 768px) {
+  .main-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main-flex-side {
+    width: 50%;
+  }
 }
 
 .comments__page {
@@ -270,11 +282,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .new__comments-button {
@@ -291,8 +303,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .new__comments-small-div {
@@ -322,17 +334,18 @@ body {
 @media only screen and (min-width: 768px) {
   .comments__page {
     width: 50%;
+    padding: 0 5%;
   }
   .comments__page .new__comments {
-    width: 60%;
+    width: 100%;
     height: 95px;
   }
   .comments__page .new__comments-input {
-    width: 60%;
+    width: 100%;
     height: 95px;
   }
   .comments__page .new__comments-input-name {
-    width: 60%;
+    width: 100%;
     height: 45px;
   }
   .comments__page .new__comments-button {
@@ -345,16 +358,30 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
   .comments__page .new__comments-page-heading-div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
+}
+
+.weatherPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 5%;
+  width: 50%;
+  border-radius: 5px;
+  justify-content: space-around;
+  background-color: #727272;
+  border: 1px solid #da5353;
 }
 /*# sourceMappingURL=main.css.map */

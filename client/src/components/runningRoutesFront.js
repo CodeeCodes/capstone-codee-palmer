@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function RunningRoutesFront() {
-  const routeUrl = "http://localhost:5000/routes";
+  const routesUrl = "http://localhost:5000/routes";
   const [routes, setRoutes] = useState([]);
 
+  const newRoutes = async () => {
+    await axios.get(routesUrl).then(res => setRoutes(res.data));
+  };
   const uploadNewRoute = event => {
     event.preventDefault();
     if (
@@ -15,7 +18,7 @@ export default function RunningRoutesFront() {
       alert("Please enter all fields. Thank you!");
     } else {
       axios
-        .post(routeUrl, {
+        .post(routesUrl, {
           name: event.target.name.value,
           age: event.target.age.value,
           comment: event.target.comment.value
@@ -28,7 +31,9 @@ export default function RunningRoutesFront() {
   };
   console.log(routes);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    newRoutes();
+  }, []);
   return (
     <div className="running__page">
       <form

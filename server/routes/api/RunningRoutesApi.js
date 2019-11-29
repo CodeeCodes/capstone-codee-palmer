@@ -28,8 +28,9 @@ router.post("/", (req, res) => {
     age: req.body.age,
     comment: req.body.comment
   });
+  console.log(req.body);
 
-  newRoute.save().then(route => res.json(route));
+  newRoute.save().then(newRoute => res.json(newRoute));
 });
 // router.delete("/:id", (req, res) => {
 //   console.log(req.params.id);

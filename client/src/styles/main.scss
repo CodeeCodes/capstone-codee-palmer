@@ -27,8 +27,9 @@ body {
 }
 
 @import "./partials/breakpoints";
-@import "./partials/runninRoutes";
+@import "./partials/runningRoutes";
 @import "./partials/fitMap";
 @import "./partials/navigationBar";
 @import "./partials/frontPage";
 @import "./partials/commentsPage";
+@import "./partials/weatherPage.scss";

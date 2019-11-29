@@ -19,3 +19,11 @@
     }
   }
 }
+@include medium {
+  .main-flex {
+    display: flex;
+    &-side {
+      width: 50%;
+    }
+  }
+}

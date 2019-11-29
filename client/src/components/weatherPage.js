@@ -10,20 +10,32 @@ export default function WeatherPage() {
 
   const getWeather = async () => {
     await axios.get(weatherURL(49.304, -123.1568)).then(res => {
-      setWeatherData({ weatherData: res.data.currently, loading: false });
+      setWeatherData({ weatherData: res.data.currently });
     });
   };
 
   useEffect(() => {
     getWeather();
   }, []);
-  console.log(weatherData);
+  console.log(weatherData.weatherData);
 
-  return (
-    <div className="weatherPage">
-      <h1 className="weather__temp">
-        {weatherData.temperature && weatherData.temperature}
-      </h1>
-    </div>
-  );
+  if (Object.keys(weatherData).length > 0) {
+    return (
+      <div className="weatherPage">
+        <h3 className="weather__temp">
+          {weatherData.weatherData["temperature"]}
+        </h3>
+        <h3 className="weather__temp">
+          {weatherData.weatherData["windSpeed"]}
+        </h3>
+        <h3 className="weather__temp">{weatherData.weatherData["summary"]}</h3>
+        <h3 className="weather__temp">
+          {weatherData.weatherData["cloudCover"]}
+        </h3>
+        <h3 className="weather__temp">{weatherData.weatherData["pressure"]}</h3>
+      </div>
+    );
+  } else {
+    return "loading";
+  }
 }

@@ -15,7 +15,7 @@ const RoutesSchema = Schema({
   },
   route: {
     type: String,
-    required: true
+    required: false
   },
   comment: {
     type: String,
@@ -32,4 +32,4 @@ const RoutesSchema = Schema({
   }
 });
 
-module.exports = Routes = mongoose.model("route", RoutesSchema);
+module.exports = Routes = mongoose.model("Routes", RoutesSchema);
