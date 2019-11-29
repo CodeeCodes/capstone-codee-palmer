@@ -10,7 +10,7 @@ function Header(props) {
     <div className="navBar">
       <NavLink
         className="navBar__heading"
-        to="/homePage"
+        to="/"
         activeStyle={{
           color: "$white",
           borderBottom: "3px solid $white"
@@ -18,7 +18,6 @@ function Header(props) {
       >
         <h2>SPRINT</h2>
       </NavLink>
-     
     </div>
   );
 }

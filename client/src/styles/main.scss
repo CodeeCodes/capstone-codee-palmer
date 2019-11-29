@@ -14,8 +14,8 @@ body {
   }
 }
 body {
-  background: url("../assets/jakub-kriz-3FFEdm8TOek-unsplash.jpg") no-repeat
-    center center fixed;
+  background: url("../assets/photos/jakub-kriz-3FFEdm8TOek-unsplash.jpg")
+    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -25,11 +25,25 @@ body {
 *:after {
   box-sizing: inherit;
 }
+.weatherPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 5%;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgb(114, 114, 114);
+  border: 1px solid rgb(218, 83, 83);
+}
+.error-message {
+  background-color: rgb(114, 114, 114);
+  border: 1px solid rgb(218, 83, 83);
+}
 
 @import "./partials/breakpoints";
+@import "./partials/frontPage";
 @import "./partials/runningRoutes";
 @import "./partials/fitMap";
 @import "./partials/navigationBar";
 @import "./partials/frontPage";
 @import "./partials/commentsPage";
-@import "./partials/weatherPage.scss";

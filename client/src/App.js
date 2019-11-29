@@ -1,18 +1,17 @@
 import React from "react";
 import MainContent from "./components/mainContent";
 import NavBar from "./components/NavBar";
+import FrontPage from "./components/frontPage";
 import { Switch, Route } from "react-router-dom";
-import FitMap from "./components/fitMap";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <MainContent />
-      {/* <Switch> */}
-        {/* <Route exact path="/mapPage" component={FitMap} /> */}
-        {/* <Route exact path="/homePage" component={MainContent} /> */}
-      {/* </Switch> */}
+      <Switch>
+        <Route exact path="/" component={FrontPage} />
+        <Route exact path="/homePage" component={MainContent} />
+      </Switch>
     </div>
   );
 }

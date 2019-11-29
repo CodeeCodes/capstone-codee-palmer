@@ -1,5 +1,6 @@
 import React from "react";
-import FitMap from "./fitMap";
+// import FitMap from "./fitMap";
+import MapBoxMap from "./mapBoxMap";
 import Comments from "./CommentsPage";
 import WeatherPage from "./weatherPage";
 import RunningRoutes from "./runningRoutesFront";
@@ -12,7 +13,7 @@ export default function MainContent() {
         <Comments />
       </div>
       <div className="main-flex-side">
-        <FitMap />
+        <MapBoxMap />
         <RunningRoutes />
       </div>
     </div>

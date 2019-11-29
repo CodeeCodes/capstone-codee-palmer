@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // import axios from "axios";
 import GoogleMapsStyles from "../styles/partials/googleMapsStyles.json";
-import runningIcon from "../assets/iconRunning.png";
+import runningIcon from "../assets/photos/iconRunning.png";
 
 export default function FitMap() {
   const stylesArray = GoogleMapsStyles;

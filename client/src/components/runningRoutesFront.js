@@ -29,11 +29,41 @@ export default function RunningRoutesFront() {
       event.target.reset();
     }
   };
-  console.log(routes);
 
   useEffect(() => {
     newRoutes();
   }, []);
+  let newRoutesDisplay;
+  if (routes.length >= 0) {
+    newRoutesDisplay = routes.map(function(route) {
+      // let timeStamp = comment.date;
+      // let toDate = new Date(timeStamp).getDate();
+      // let toMonth = new Date(timeStamp).getMonth() + 1;
+      // let toYear = new Date(timeStamp).getFullYear();
+      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
+
+      return (
+        <div className="new__comments" key={route._id}>
+          <div className="new__comments-small-div">
+            <h4 className="new__comments-name">{route.name}</h4>
+            <p className="new__comments-date">{route.date}</p>
+          </div>
+          <p className="new__comments-text">{route.comment}</p>
+          <button id={route._id} className="new__comments-button-small">
+            Delete
+          </button>
+          <button className="new__comments-button-small">Edit</button>
+        </div>
+      );
+    });
+  } else {
+    return (
+      <div className="error-message-div">
+        <h1 className="error-message">Page is loading</h1>
+      </div>
+    );
+  }
+
   return (
     <div className="running__page">
       <form
@@ -67,6 +97,7 @@ export default function RunningRoutesFront() {
           <button className="new__routes-button">SAVE</button>
         </div>
       </form>
+      {newRoutesDisplay}
     </div>
   );
 }

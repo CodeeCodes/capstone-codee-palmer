@@ -66,7 +66,11 @@ export default function CommentsPage() {
       );
     });
   } else {
-    return "loading...";
+    return (
+      <div className="error-message-div">
+        <h1 className="error-message">Page is loading</h1>
+      </div>
+    );
   }
   // console.log();
   return (
