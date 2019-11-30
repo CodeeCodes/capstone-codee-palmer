@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import clearSvg from "../assets/svg/clear.svg";
+// import clearSvg from "../assets/svg/clear.svg";
 
 export default function WeatherPage() {
   const [weatherData, setWeatherData] = useState([]);

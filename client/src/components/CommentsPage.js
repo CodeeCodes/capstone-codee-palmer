@@ -75,7 +75,9 @@ export default function CommentsPage() {
   // console.log();
   return (
     <div className="comments__page">
+      <div className="comments__page-comments">
       {newComment}
+      </div>
       <form
         action="/"
         method="POST"

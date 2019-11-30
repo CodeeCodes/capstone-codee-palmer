@@ -14,8 +14,8 @@ body {
   }
 }
 body {
-  background: url("../assets/photos/jakub-kriz-3FFEdm8TOek-unsplash.jpg")
-    no-repeat center center fixed;
+  background: url("../assets/photos/cold-road.jpg") no-repeat center center
+    fixed;
   background-size: cover;
 }
 
@@ -25,6 +25,10 @@ body {
 *:after {
   box-sizing: inherit;
 }
+.front__page-div-One {
+  height: 100px;
+  width: 100px;
+}
 .weatherPage {
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +36,7 @@ body {
   margin: 0 5%;
   width: 50%;
   border-radius: 5px;
-  background-color: rgb(114, 114, 114);
+  background-color: #5e809b;
   border: 1px solid rgb(218, 83, 83);
 }
 .error-message {

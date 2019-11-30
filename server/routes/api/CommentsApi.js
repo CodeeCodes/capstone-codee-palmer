@@ -35,11 +35,8 @@ router.delete("/:id", (req, res) => {
   Comment.findById(req.params.id).then(comment =>
     comment
       .remove()
-      .then(() =>
-        res
-          .json({ success: true })
-          .catch(er => res.status(404).json({ success: false }))
-      )
+      .then(() => res.json({ success: true }))
+      .catch(er => res.status(404).json({ success: false }))
   );
 });
 module.exports = router;

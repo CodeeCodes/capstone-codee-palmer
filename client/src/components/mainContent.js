@@ -4,6 +4,7 @@ import MapBoxMap from "./mapBoxMap";
 import Comments from "./CommentsPage";
 import WeatherPage from "./weatherPage";
 import RunningRoutes from "./runningRoutesFront";
+import RacesPage from "./races";
 
 export default function MainContent() {
   return (
@@ -11,6 +12,7 @@ export default function MainContent() {
       <div className="main-flex-side">
         <WeatherPage />
         <Comments />
+        <RacesPage />
       </div>
       <div className="main-flex-side">
         <MapBoxMap />

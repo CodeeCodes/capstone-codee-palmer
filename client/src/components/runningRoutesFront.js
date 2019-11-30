@@ -43,16 +43,16 @@ export default function RunningRoutesFront() {
       // let originalDate = toMonth + "/" + toDate + "/" + toYear;
 
       return (
-        <div className="new__comments" key={route._id}>
-          <div className="new__comments-small-div">
-            <h4 className="new__comments-name">{route.name}</h4>
-            <p className="new__comments-date">{route.date}</p>
+        <div className="new__routes-comments" key={route._id}>
+          <div className="new__routes-comments-small-div">
+            <h4 className="new__routes-comments-name">{route.name}</h4>
+            <p className="new__routes-comments-date">{route.date}</p>
           </div>
-          <p className="new__comments-text">{route.comment}</p>
-          <button id={route._id} className="new__comments-button-small">
+          <p className="new__-routes-comments-text">{route.comment}</p>
+          <button id={route._id} className="new__routes-comments-button-small">
             Delete
           </button>
-          <button className="new__comments-button-small">Edit</button>
+          <button className="new__routes-comments-button-small">Edit</button>
         </div>
       );
     });
@@ -72,32 +72,32 @@ export default function RunningRoutesFront() {
         onSubmit={uploadNewRoute}
         className="new__routes"
       >
-        <h4 className="new__routes-heading-small">Name</h4>
+        <h4 className="new__routes-comments-heading-small">Name</h4>
         <input
           type="text"
           name="name"
           placeholder="Name"
-          className="new__routes-input-name"
+          className="new__routes-comments-input-name"
         />
-        <h4 className="new__routes-heading-small">Age</h4>
+        <h4 className="new__routes-comments-heading-small">Age</h4>
         <input
           type="text"
           name="age"
           placeholder="Comment"
-          className="new__routes-input"
+          className="new__routes-comments-input"
         />
-        <h4 className="new__routes-heading-small">Comment</h4>
+        <h4 className="new__routes-comments-heading-small">Comment</h4>
         <input
           type="text"
           name="comment"
           placeholder="Comment"
-          className="new__routes-input"
+          className="new__routes-comments-input"
         />
-        <div className="new__routes-button-div">
-          <button className="new__routes-button">SAVE</button>
+        <div className="new__routes-comments-button-div">
+          <button className="new__routes-comments-button">SAVE</button>
         </div>
       </form>
-      {newRoutesDisplay}
+      <div className="new__routes-comments-div">{newRoutesDisplay}</div>
     </div>
   );
 }
