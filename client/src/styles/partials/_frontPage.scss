@@ -18,12 +18,12 @@
       background-image: "./assets/unsplashRoad.jpg";
     }
   }
-}
-@include medium {
-  .main-flex {
-    display: flex;
-    &-side {
-      width: 50%;
+  &-input {
+    background: transparent;
+    &-name {
+      background: transparent;
     }
   }
+}
+@include medium {
 }

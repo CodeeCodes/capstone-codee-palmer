@@ -29,6 +29,11 @@ export default function RunningRoutesFront() {
       event.target.reset();
     }
   };
+  const deleteRoute = async e => {
+    await axios
+      .delete(`${routesUrl}/${e.target.id}`)
+      .then(res => setRoutes(res.data));
+  };
 
   useEffect(() => {
     newRoutes();
@@ -49,7 +54,11 @@ export default function RunningRoutesFront() {
             <p className="new__routes-comments-date">{route.date}</p>
           </div>
           <p className="new__-routes-comments-text">{route.comment}</p>
-          <button id={route._id} className="new__routes-comments-button-small">
+          <button
+            id={route._id}
+            onClick={deleteRoute}
+            className="new__routes-comments-button-small"
+          >
             Delete
           </button>
           <button className="new__routes-comments-button-small">Edit</button>

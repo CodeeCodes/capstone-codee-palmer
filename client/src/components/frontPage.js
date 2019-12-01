@@ -21,35 +21,37 @@ export default function frontPage() {
 
   return (
     <section className="front__page">
-      <form
-        action="/"
-        method="POST"
-        onSubmit={loginUser}
-        className="new__comments-form"
-      >
-        <h4 className="new__comments-heading-small">Email</h4>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          className="new__comments-input-name"
-        />
-        <h4 className="new__comments-heading-small">Password</h4>
-        <input
-          type="text"
-          name="password"
-          placeholder="Password"
-          className="new__comments-input"
-        />
-        <div className="new__comments-button-div">
-          <button className="new__comments-button">LOGIN</button>
-        </div>
-      </form>
-      <Link to="/homePage">
-        <div className="front__page-div-One">
-          <img className="front__page-div-One-image" src={running} alt="" />
-        </div>
-      </Link>
+      <div className="front__page-div">
+        <form
+          action="/"
+          method="POST"
+          onSubmit={loginUser}
+          className="front__page-form"
+        >
+          <h4 className="front__page-heading-small">Email</h4>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            className="front__page-input-name"
+          />
+          <h4 className="front__page-heading-small">Password</h4>
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            className="front__page-input"
+          />
+          <div className="front__page-button-div">
+            <button className="front__page-button">LOGIN</button>
+          </div>
+        </form>
+        <Link to="/homePage">
+          <div className="front__page-div-One">
+            <img className="front__page-div-One-image" src={running} alt="" />
+          </div>
+        </Link>
+      </div>
     </section>
   );
 }

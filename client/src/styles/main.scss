@@ -34,7 +34,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 5%;
-  width: 50%;
   border-radius: 5px;
   background-color: #5e809b;
   border: 1px solid rgb(218, 83, 83);
@@ -43,11 +42,16 @@ body {
   background-color: rgb(114, 114, 114);
   border: 1px solid rgb(218, 83, 83);
 }
+.main-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 @import "./partials/breakpoints";
 @import "./partials/frontPage";
 @import "./partials/runningRoutes";
 @import "./partials/fitMap";
+@import "./partials/nextRaces";
 @import "./partials/navigationBar";
 @import "./partials/frontPage";
 @import "./partials/commentsPage";

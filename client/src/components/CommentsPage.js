@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
+  const [show, setShow] = useState(false);
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -34,6 +37,8 @@ export default function CommentsPage() {
   useEffect(() => {
     newComments();
   }, []);
+
+  console.log(comments);
   const useForceUpdate = () => useState()[1];
 
   const forceUpdate = useForceUpdate();
@@ -75,33 +80,48 @@ export default function CommentsPage() {
   // console.log();
   return (
     <div className="comments__page">
-      <div className="comments__page-comments">
-      {newComment}
-      </div>
-      <form
-        action="/"
-        method="POST"
-        onSubmit={uploadNewComment}
-        className="new__comments-form"
+      <h2 variant="secondary" onClick={() => setShow(true)}>
+        CHAT
+      </h2>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-100w"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
-        <h4 className="new__comments-heading-small">Name</h4>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          className="new__comments-input-name"
-        />
-        <h4 className="new__comments-heading-small">Comment</h4>
-        <input
-          type="text"
-          name="comment"
-          placeholder="Comment"
-          className="new__comments-input"
-        />
-        <div className="new__comments-button-div">
-          <button className="new__comments-button">SAVE</button>
-        </div>
-      </form>
+        <Modal.Header closeButton>
+          <Modal.Title>CHAT</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="comments__page-comments">{newComment}</div>
+
+          <form
+            action="/"
+            method="POST"
+            onSubmit={uploadNewComment}
+            className="new__comments-form"
+          >
+            <h4 className="new__comments-heading-small">Name</h4>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="new__comments-input-name"
+            />
+            <h4 className="new__comments-heading-small">Comment</h4>
+            <input
+              type="text"
+              name="comment"
+              placeholder="Comment"
+              className="new__comments-input"
+            />
+            <div className="new__comments-button-div">
+              <button className="new__comments-button">SAVE</button>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

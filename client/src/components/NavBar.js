@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import RacesPage from "./races";
+import Comments from "./CommentsPage";
 function Header(props) {
   const [state, setState] = useState(true);
   const toggle = () => {
     setState(!state);
   };
   return (
-    <div className="navBar">
+    <header className="navBar">
       <NavLink
         className="navBar__heading"
         to="/"
@@ -18,7 +19,9 @@ function Header(props) {
       >
         <h2>SPRINT</h2>
       </NavLink>
-    </div>
+      <Comments />
+      <RacesPage />
+    </header>
   );
 }
 
