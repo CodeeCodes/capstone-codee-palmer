@@ -5,6 +5,7 @@ const helper = require("../../helper/helper");
 router.use(cors());
 const uuid = require("uuid");
 const app = express();
+const verify = require("../jwtAuth");
 
 // / Initialize Files, File Data
 const routesData = `${__dirname}` + "/model/runningRoutes.js";
