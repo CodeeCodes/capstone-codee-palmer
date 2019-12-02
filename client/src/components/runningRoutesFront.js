@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
+import running from "../assets/svg/running.svg";
 
 export default function RunningRoutesFront() {
   const routesUrl = "http://localhost:5000/routes";
+  const [show, setShow] = useState(false);
   const [routes, setRoutes] = useState([]);
 
   const newRoutes = async () => {
@@ -67,46 +70,69 @@ export default function RunningRoutesFront() {
     });
   } else {
     return (
-      <div className="error-message-div">
-        <h1 className="error-message">Page is loading</h1>
+      <div className="front__page-div-One">
+        <img className="front__page-div-One-image" src={running} alt="" />
       </div>
     );
   }
 
   return (
     <div className="running__page">
-      <form
-        action="/"
-        method="POST"
-        onSubmit={uploadNewRoute}
-        className="new__routes"
+      <h2 variant="secondary" onClick={() => setShow(true)}>
+        Routes
+      </h2>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-100w"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
-        <h4 className="new__routes-comments-heading-small">Name</h4>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          className="new__routes-comments-input-name"
-        />
-        <h4 className="new__routes-comments-heading-small">Age</h4>
-        <input
-          type="text"
-          name="age"
-          placeholder="Comment"
-          className="new__routes-comments-input"
-        />
-        <h4 className="new__routes-comments-heading-small">Comment</h4>
-        <input
-          type="text"
-          name="comment"
-          placeholder="Comment"
-          className="new__routes-comments-input"
-        />
-        <div className="new__routes-comments-button-div">
-          <button className="new__routes-comments-button">SAVE</button>
-        </div>
-      </form>
-      <div className="new__routes-comments-div">{newRoutesDisplay}</div>
+        <Modal.Header closeButton>
+          <Modal.Title>Routes</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form
+            action="/"
+            method="POST"
+            onSubmit={uploadNewRoute}
+            className="new__routes"
+          >
+            <h4 className="new__routes-comments-heading-small">Name</h4>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="new__routes-comments-input-name"
+            />
+            <h4 className="new__routes-comments-heading-small">Age</h4>
+            <input
+              type="text"
+              name="age"
+              placeholder="Comment"
+              className="new__routes-comments-input"
+            />
+            <h4 className="new__routes-comments-heading-small">Routes</h4>
+            <input
+              type="text"
+              name="route"
+              placeholder="Route"
+              className="new__routes-comments-input"
+            />
+            <h4 className="new__routes-comments-heading-small">Comment</h4>
+            <input
+              type="text"
+              name="comment"
+              placeholder="Comment"
+              className="new__routes-comments-input"
+            />
+            <div className="new__routes-comments-button-div">
+              <button className="new__routes-comments-button">SAVE</button>
+            </div>
+          </form>
+          <div className="new__routes-comments-div">{newRoutesDisplay}</div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

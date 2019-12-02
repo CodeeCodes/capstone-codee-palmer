@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import running from "../assets/svg/running.svg";
+import Draggable from "react-draggable";
 import axios from "axios";
 
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
-  const [show, setShow] = useState(false);
+
+  const useForceUpdate = () => useState()[1];
+
+  const forceUpdate = useForceUpdate();
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -29,7 +33,7 @@ export default function CommentsPage() {
   const deleteComment = async e => {
     await axios
       .delete(`${commentsUrl}/${e.target.id}`)
-      .then(res => setComments(res.data));
+      .then(res => setComments(res.data), forceUpdate());
   };
   const newComments = async () => {
     await axios.get(commentsUrl).then(res => setComments(res.data));
@@ -38,25 +42,20 @@ export default function CommentsPage() {
     newComments();
   }, []);
 
-  console.log(comments);
-  const useForceUpdate = () => useState()[1];
-
-  const forceUpdate = useForceUpdate();
-
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
-      // let timeStamp = comment.date;
-      // let toDate = new Date(timeStamp).getDate();
-      // let toMonth = new Date(timeStamp).getMonth() + 1;
-      // let toYear = new Date(timeStamp).getFullYear();
-      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
+      let timeStamp = comment.date;
+      let toDate = new Date(timeStamp).getDate();
+      let toMonth = new Date(timeStamp).getMonth() + 1;
+      let toYear = new Date(timeStamp).getFullYear();
+      let originalDate = toMonth + "/" + toDate + "/" + toYear;
 
       return (
         <div className="new__comments" key={comment._id}>
           <div className="new__comments-small-div">
             <h4 className="new__comments-name">{comment.name}</h4>
-            <p className="new__comments-date">{comment.date}</p>
+            <p className="new__comments-date">{originalDate}</p>
           </div>
           <p className="new__comments-text">{comment.comment}</p>
           <button
@@ -72,56 +71,41 @@ export default function CommentsPage() {
     });
   } else {
     return (
-      <div className="error-message-div">
-        <h1 className="error-message">Page is loading</h1>
+      <div className="front__page-div-One">
+        <img className="front__page-div-One-image" src={running} alt="" />
       </div>
     );
   }
-  // console.log();
+
   return (
     <div className="comments__page">
-      <h2 variant="secondary" onClick={() => setShow(true)}>
-        CHAT
-      </h2>
-      <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        dialogClassName="modal-100w"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
+      <Draggable>
+        <div className="comments__page-comments">{newComment}</div>
+      </Draggable>
+      <form
+        action="/"
+        method="POST"
+        onSubmit={uploadNewComment}
+        className="new__comments-form"
       >
-        <Modal.Header closeButton>
-          <Modal.Title>CHAT</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="comments__page-comments">{newComment}</div>
-
-          <form
-            action="/"
-            method="POST"
-            onSubmit={uploadNewComment}
-            className="new__comments-form"
-          >
-            <h4 className="new__comments-heading-small">Name</h4>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="new__comments-input-name"
-            />
-            <h4 className="new__comments-heading-small">Comment</h4>
-            <input
-              type="text"
-              name="comment"
-              placeholder="Comment"
-              className="new__comments-input"
-            />
-            <div className="new__comments-button-div">
-              <button className="new__comments-button">SAVE</button>
-            </div>
-          </form>
-        </Modal.Body>
-      </Modal>
+        <h4 className="new__comments-heading-small">Name</h4>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          className="new__comments-input-name"
+        />
+        <h4 className="new__comments-heading-small">Comment</h4>
+        <input
+          type="text"
+          name="comment"
+          placeholder="Comment"
+          className="new__comments-input"
+        />
+        <div className="new__comments-button-div">
+          <button className="new__comments-button">SAVE</button>
+        </div>
+      </form>
     </div>
   );
 }

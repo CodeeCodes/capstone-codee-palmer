@@ -33,9 +33,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 5%;
+  margin: 10px 5%;
   border-radius: 5px;
-  background-color: #5e809b;
+  background-color: #c9e7ff;
+  box-shadow: 5px 10px;
   border: 1px solid rgb(218, 83, 83);
 }
 .error-message {

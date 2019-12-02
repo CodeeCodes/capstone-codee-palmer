@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useSpring, animated } from "react-spring";
 import running from "../assets/svg/running.svg";
 const loginUrl = "http://localhost:5000/login";
 
-export default function frontPage() {
+export default function FrontPage() {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   const loginUser = event => {
     event.preventDefault();
     axios
@@ -12,16 +15,18 @@ export default function frontPage() {
         email: event.target.email.value,
         password: event.target.password.value
       })
-      .then(res => {
-        console.log("logged in");
-        console.log(res);
+      .then(({ data }) => {
+        console.log(data);
+        if (data === 200) {
+          localStorage.authToken = data.token;
+        }
       });
     event.target.reset();
   };
 
   return (
     <section className="front__page">
-      <div className="front__page-div">
+      <animated.div style={props} className="front__page-div">
         <form
           action="/"
           method="POST"
@@ -51,7 +56,7 @@ export default function frontPage() {
             <img className="front__page-div-One-image" src={running} alt="" />
           </div>
         </Link>
-      </div>
+      </animated.div>
     </section>
   );
 }

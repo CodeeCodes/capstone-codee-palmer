@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import clearSvg from "../assets/svg/clear.svg";
+import running from "../assets/svg/running.svg";
 
 export default function WeatherPage() {
   const [weatherData, setWeatherData] = useState([]);
@@ -18,6 +19,7 @@ export default function WeatherPage() {
   useEffect(() => {
     getWeather();
   }, []);
+  console.log(weatherData);
 
   if (Object.keys(weatherData).length > 0) {
     return (
@@ -37,8 +39,8 @@ export default function WeatherPage() {
     );
   } else {
     return (
-      <div className="error-message-div">
-        <h1 className="error-message">Page is loading</h1>
+      <div className="front__page-div-One">
+        <img className="front__page-div-One-image" src={running} alt="" />
       </div>
     );
   }

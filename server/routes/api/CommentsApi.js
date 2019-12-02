@@ -32,7 +32,7 @@ router.post("/", (req, res) => {
   newComments.save().then(comment => res.json(comment));
 });
 router.delete("/:id", (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   Comment.findById(req.params.id).then(comment =>
     comment
       .remove()

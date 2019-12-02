@@ -22,12 +22,11 @@ export default function Races() {
 
   const searchRaces = e => {
     let filteredRaces = races.filter(race => {
-      return race.name.toLowerCase().indexOf(races.name) !== -1;
+      return race.name.toLowerCase().indexOf(race.name) !== -1;
     });
     setSearchState(filteredRaces);
   };
 
-  console.log(races);
   const renderRacesFront = races.map(function(race) {
     return (
       <div className="nextRace" key={race.id}>
@@ -37,7 +36,7 @@ export default function Races() {
       </div>
     );
   });
-
+  console.log(races);
   return (
     <div className="races">
       {" "}

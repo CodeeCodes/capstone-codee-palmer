@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import RacesPage from "./races";
-import Comments from "./CommentsPage";
+import RunningRoutes from "./runningRoutesFront";
 function Header(props) {
   const [state, setState] = useState(true);
   const toggle = () => {
@@ -19,7 +19,7 @@ function Header(props) {
       >
         <h2>SPRINT</h2>
       </NavLink>
-      <Comments />
+      <RunningRoutes />
       <RacesPage />
     </header>
   );

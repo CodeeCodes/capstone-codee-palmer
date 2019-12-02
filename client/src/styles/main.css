@@ -40,9 +40,11 @@ body {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 0 5%;
+  margin: 10px 5%;
   border-radius: 5px;
-  background-color: #5e809b;
+  background-color: #c9e7ff;
+  -webkit-box-shadow: 5px 10px;
+          box-shadow: 5px 10px;
   border: 1px solid #da5353;
 }
 
@@ -102,7 +104,6 @@ body {
 
 .running__page {
   margin: 10px 5%;
-  background-color: #6f8698;
   border-radius: 10px;
 }
 
@@ -115,15 +116,15 @@ body {
 
 .new__routes-comments-input {
   width: 100%;
-  height: 100px;
-  background-color: #5e809b;
+  height: 40px;
+  background-color: #c9e7ff;
   border-radius: 5px;
 }
 
 .new__routes-comments-input-name {
   width: 100%;
-  height: 50px;
-  background-color: #5e809b;
+  height: 40px;
+  background-color: #c9e7ff;
   border-radius: 5px;
 }
 
@@ -186,7 +187,6 @@ body {
 
 @media only screen and (min-width: 768px) {
   .running__page {
-    width: 40%;
     padding: 0 5%;
   }
   .new__routes {
@@ -232,7 +232,7 @@ body {
 
 .map__main {
   width: 100vw;
-  height: 400px;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,24 +330,30 @@ body {
 
 .new__comments {
   width: 100%;
-  background-color: #5e809b;
+  background-color: #c9e7ff;
   border: 1px solid #da5353;
   margin: 15px 0;
   border-radius: 5px;
+  -webkit-box-shadow: 5px 10px;
+          box-shadow: 5px 10px;
 }
 
 .new__comments-input {
   width: 100%;
   height: 100px;
-  background-color: #5e809b;
+  background-color: #c9e7ff;
   border-radius: 5px;
 }
 
 .new__comments-input-name {
   width: 100%;
   height: 50px;
-  background-color: #5e809b;
+  background-color: #c9e7ff;
   border-radius: 5px;
+}
+
+.new__comments-heading-small {
+  color: #fff;
 }
 
 .new__comments-page-heading-div {
@@ -404,12 +410,11 @@ body {
 
 @media only screen and (min-width: 768px) {
   .comments__page {
-    width: 50%;
+    width: 40%;
     padding: 0 5%;
   }
   .comments__page .new__comments {
     width: 100%;
-    height: 95px;
   }
   .comments__page .new__comments-input {
     width: 100%;

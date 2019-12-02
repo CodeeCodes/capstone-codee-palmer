@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import ReactMapGL, { Marker } from "react-map-gl";
+import ReactMapGL, {
+  Marker,
+  Source,
+  Layer,
+  GeolocateControl
+} from "react-map-gl";
+import data from "../assets/geoJson/morning_run.geojson";
 
 export default function MapBoxMap() {
+  const [data, setData] = useState([]);
   const [viewport, setViewport] = useState({
     latitude: 49.2827,
     longitude: -123.1207,
@@ -16,9 +23,15 @@ export default function MapBoxMap() {
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={viewport => setViewport(viewport)}
-        mapStyle="mapbox://styles/codeecodes/ck3ks0grh0aaf1cqy248h5ysv"
+        mapStyle="mapbox://styles/codeecodes/ck3nm0uki20121cp91l1iwoib"
       >
-        <Marker latitude={49.2827} longitude={-123.1207}></Marker>
+        {/* <Source type="geojson" data={data}>
+          <Layer />
+        </Source> */}
+        <GeolocateControl
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        />
       </ReactMapGL>
     </div>
   );

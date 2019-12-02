@@ -25,6 +25,7 @@ const loginValidation = data => {
       .email(),
     password: joi
       .string()
+      .allow("")
       .min(6)
       .required()
   });
@@ -43,14 +44,13 @@ router.post("/", async (req, res) => {
   if (!emailExists) return res.status(400).send("Email doesn't exist");
 
   //checking is password is correct
-  //   const validPassword = await bcrypt.compare(req.body.password, User.password);
-  //   if (!validPassword) return res.status(400).send(" Password doesn't exist");
+  const validPassword = await bcrypt.compare(req.body.password, User.password);
+  if (!validPassword) return res.status(400).send(" Password doesn't exist");
 
   // create jwt token and assign it
 
   const token = jwt.sign({ _id: User._id }, tokenSecret);
   res.header("auth-token", token).send(token);
 });
-
 
 module.exports = router;
