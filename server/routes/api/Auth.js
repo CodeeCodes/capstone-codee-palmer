@@ -35,21 +35,17 @@ const userValidation = data => {
 
 
 router.post("/", async (req, res) => {
+  
   //validate data
   const { error } = userValidation(req.body);
   if (error) return res.status(400).send(error);
-
   const emailExists = await User.findOne({
     email: req.body.email
   });
-
   if (emailExists) return res.status(400).send("Email already exists");
-
   //hash password
-
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
   const newUser = new User({
     name: req.body.name,
     email: req.body.email,

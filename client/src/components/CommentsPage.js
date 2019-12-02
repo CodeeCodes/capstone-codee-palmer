@@ -1,43 +1,55 @@
 import React, { useState, useEffect } from "react";
 import running from "../assets/svg/running.svg";
+import runningMain from "../assets/svg/runningMain.svg";
 import axios from "axios";
 
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
-
   const useForceUpdate = () => useState()[1];
-
   const forceUpdate = useForceUpdate();
 
   const uploadNewComment = event => {
     event.preventDefault();
-    if (!event.target.name.value || !event.target.comment.value) {
-      alert("Please enter all fields. Thank you!");
-    } else {
-      axios
-        .post(commentsUrl, {
-          name: event.target.name.value,
-          comment: event.target.comment.value
-        })
-        .then(res => {
+
+    axios
+      .post(commentsUrl, {
+        name: event.target.user.value,
+        comment: event.target.comment.value
+      })
+      .then(res => {
+        setTimeout(() => {
           setComments(res.data);
         });
-      event.target.reset();
-    }
+      }, 500);
+    event.target.reset();
   };
   // console.log(comments);
+  const updateComment = event => {
+    axios.put(commentsUrl, {
+      name: event.target.user.value,
+      comment: event.target.comment.value
+    });
+    // .then(res => {
+    //   setComments(res.data);
+  };
 
   const deleteComment = async e => {
     await axios
       .delete(`${commentsUrl}/${e.target.id}`)
-      .then(res => setComments(res.data), forceUpdate());
+      .then(res => setComments(res.data));
   };
-  const newComments = async () => {
-    await axios.get(commentsUrl).then(res => setComments(res.data));
+  const newComments = () => {
+    axios
+      .get(commentsUrl, {
+        headers: { Authorization: `Bearer ${localStorage.authToken}` }
+      })
+      .then(res => setComments(res.data));
   };
   useEffect(() => {
-    newComments();
+    setInterval(() => {
+      newComments();
+    }, 100);
   }, []);
 
   let newComment;
@@ -63,7 +75,12 @@ export default function CommentsPage() {
           >
             Delete
           </button>
-          <button className="new__comments-button-small">Edit</button>
+          <button
+            className="new__comments-button-small"
+            onClick={updateComment}
+          >
+            Edit
+          </button>
         </div>
       );
     });
@@ -77,8 +94,6 @@ export default function CommentsPage() {
 
   return (
     <div className="comments__page">
-      <div className="comments__page-comments">{newComment}</div>
-
       <form
         action="/"
         method="POST"
@@ -88,7 +103,7 @@ export default function CommentsPage() {
         <h4 className="new__comments-heading-small">Name</h4>
         <input
           type="text"
-          name="name"
+          name="user"
           placeholder="Name"
           className="new__comments-input-name"
         />
@@ -100,9 +115,15 @@ export default function CommentsPage() {
           className="new__comments-input"
         />
         <div className="new__comments-button-div">
-          <button className="new__comments-button">SAVE</button>
+          <button className="new__comments-button" onClick={forceUpdate}>
+            SAVE
+          </button>
         </div>
       </form>
+      <div className="comments__page-comments">{newComment}</div>
+      <div className="comments__page-image-div">
+        <img className="comments__page-image" src={runningMain} alt="" />
+      </div>
     </div>
   );
 }

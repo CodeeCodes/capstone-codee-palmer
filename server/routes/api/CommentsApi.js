@@ -14,6 +14,7 @@ let Comment = require(commentsData);
 app.use(express.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
+  // console.log(req.headers);
   try {
     Comment.find()
       .sort({ date: 1 })
@@ -36,6 +37,15 @@ router.delete("/:id", (req, res) => {
   Comment.findById(req.params.id).then(comment =>
     comment
       .remove()
+      .then(() => res.json({ success: true }))
+      .catch(er => res.status(404).json({ success: false }))
+  );
+});
+router.put("/:id", (req, res) => {
+  // console.log(req.params.id);
+  Comment.findById(req.params.id).then(comment =>
+    comment
+      .update()
       .then(() => res.json({ success: true }))
       .catch(er => res.status(404).json({ success: false }))
   );

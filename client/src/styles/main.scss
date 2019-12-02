@@ -14,9 +14,7 @@ body {
   }
 }
 body {
-  background: url("../assets/photos/cold-road.jpg") no-repeat center center
-    fixed;
-  background-size: cover;
+  background-color: #f4e87c;
 }
 
 /* Enforces border-box for whole site */
@@ -29,35 +27,6 @@ body {
   height: 100px;
   width: 100px;
 }
-.weatherPage {
-  z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 40%;
-  margin: 10px 5%;
-  border-radius: 5px;
-  background-color: #c9e7ff;
-  box-shadow: 5px 10px;
-  border: 1px solid rgb(218, 83, 83);
-}
-.error-message {
-  background-color: rgb(114, 114, 114);
-  border: 1px solid rgb(218, 83, 83);
-}
-.main-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.main__maps {
-  height: 200px;
-  width: 25%;
-  text-align: center;
-  &-image {
-    width: 150px;
-    height: 100px;
-  }
-}
 
 @import "./partials/breakpoints";
 @import "./partials/frontPage";
@@ -67,4 +36,5 @@ body {
 @import "./partials/navigationBar";
 @import "./partials/frontPage";
 @import "./partials/commentsPage";
+@import "./partials/weatherPage";
 @import "./partials/footer";

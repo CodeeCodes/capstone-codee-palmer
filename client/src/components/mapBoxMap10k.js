@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
+import Form from "./runningRoutesFront";
 
 export default function MapBoxMap10K() {
   const [viewport, setViewport] = useState({
@@ -23,6 +24,7 @@ export default function MapBoxMap10K() {
           trackUserLocation={true}
         />
       </ReactMapGL>
+      {/* <Form /> */}
     </div>
   );
 }

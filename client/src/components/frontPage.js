@@ -16,10 +16,8 @@ export default function FrontPage() {
         password: event.target.password.value
       })
       .then(({ data }) => {
-        console.log(data);
-        if (data === 200) {
-          localStorage.authToken = data.token;
-        }
+        console.log("Token: ", data);
+        localStorage.authToken = data.token;
       });
     event.target.reset();
   };

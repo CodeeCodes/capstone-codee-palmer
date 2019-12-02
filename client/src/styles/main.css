@@ -15,8 +15,7 @@ body a {
 }
 
 body {
-  background: url("../assets/photos/cold-road.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-color: #f4e87c;
 }
 
 /* Enforces border-box for whole site */
@@ -30,48 +29,6 @@ body {
 .front__page-div-One {
   height: 100px;
   width: 100px;
-}
-
-.weatherPage {
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 40%;
-  margin: 10px 5%;
-  border-radius: 5px;
-  background-color: #c9e7ff;
-  -webkit-box-shadow: 5px 10px;
-          box-shadow: 5px 10px;
-  border: 1px solid #da5353;
-}
-
-.error-message {
-  background-color: #727272;
-  border: 1px solid #da5353;
-}
-
-.main-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.main__maps {
-  height: 200px;
-  width: 25%;
-  text-align: center;
-}
-
-.main__maps-image {
-  width: 150px;
-  height: 100px;
 }
 
 /* Media Query: Tablet */
@@ -165,7 +122,6 @@ body {
 .new__routes-comments-button {
   width: 66%;
   height: 30px;
-  background-color: #da5353;
   color: #fff;
   border-radius: 5px;
   margin-top: 20px;
@@ -197,7 +153,6 @@ body {
 
 .new__routes-comments-button-small {
   width: 20%;
-  background-color: #da5353;
   border-radius: 10px;
   color: #fff;
 }
@@ -241,47 +196,47 @@ body {
   }
 }
 
-.map {
-  width: 90%;
+.main-flex {
+  display: inline-block;
+  margin: 0 5%;
+}
+
+.main-flex .main__maps {
+  height: 200px;
+  width: 100%;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.main-flex .main__maps-image {
+  width: 100%;
   height: 100%;
-  border-radius: 20px;
-}
-
-.map__main {
-  width: 100vw;
-  height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.map__maindiv {
-  width: 600px;
 }
 
 @media only screen and (min-width: 768px) {
-  .map {
-    width: 100%;
-    height: 70%;
+  .main-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  .map__main {
-    margin: 10px 5%;
-    width: 100%;
-    height: 400px;
+  .main-flex .main__maps {
+    height: 200px;
+    width: 25%;
+    text-align: center;
+  }
+  .main-flex .main__maps-image {
+    width: 150px;
+    height: 100px;
   }
 }
 
 .races {
   text-align: center;
-  background-color: #fff;
+  background-color: #77a6b6;
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 5px;
 }
 
 .races__heading {
@@ -294,6 +249,7 @@ body {
   display: flex;
   height: 170px;
   overflow: auto;
+  background-color: #f4e87c;
 }
 
 .navBar {
@@ -311,7 +267,7 @@ body {
   margin-bottom: 10px;
   width: 100vw;
   height: 80px;
-  background-color: #151313;
+  background-color: #77a6b6;
 }
 
 .navBar__heading {
@@ -359,8 +315,8 @@ body {
 
 .comments__page {
   margin: 10px 5%;
-  border-radius: 10px;
   text-align: center;
+  background-color: #6baa75;
 }
 
 .comments__page-comments {
@@ -368,14 +324,22 @@ body {
   overflow: auto;
 }
 
+.comments__page-image {
+  height: 100%;
+  width: 100%;
+}
+
+.comments__page-image-div {
+  width: 20%;
+  height: 100px;
+}
+
 .new__comments {
   z-index: 1;
   width: 100%;
-  background-color: #22282c;
+  background-color: #77a6b6;
   margin: 15px 0;
   border-radius: 5px;
-  -webkit-box-shadow: 5px 10px;
-          box-shadow: 5px 10px;
 }
 
 .new__comments-text {
@@ -385,7 +349,7 @@ body {
 .new__comments-input {
   width: 100%;
   height: 100px;
-  background-color: #22282c;
+  background-color: #77a6b6;
   border-radius: 5px;
   color: #fff;
 }
@@ -393,7 +357,7 @@ body {
 .new__comments-input-name {
   width: 100%;
   height: 50px;
-  background-color: #22282c;
+  background-color: #77a6b6;
   color: #fff;
   border-radius: 5px;
 }
@@ -417,7 +381,7 @@ body {
 .new__comments-button {
   width: 66%;
   height: 30px;
-  background-color: #777777;
+  background-color: #7ac74f;
   color: #fff;
   border-radius: 5px;
   margin-top: 20px;
@@ -432,15 +396,8 @@ body {
           justify-content: center;
 }
 
-.new__comments-small-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .new__comments-name {
   margin: 0;
-  margin-right: 10%;
   color: #fff;
 }
 
@@ -450,7 +407,7 @@ body {
 
 .new__comments-button-small {
   width: 20%;
-  background-color: #777777;
+  background-color: #7ac74f;
   border-radius: 10px;
   color: #fff;
 }
@@ -458,14 +415,12 @@ body {
 @media only screen and (min-width: 768px) {
   .comments__page {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin: 0;
   }
   .comments__page-comments {
-    width: 50%;
+    width: 35%;
     margin-left: 5%;
+    height: 235px;
   }
   .new__comments {
     width: 100%;
@@ -479,8 +434,8 @@ body {
     height: 45px;
   }
   .new__comments-form {
-    width: 30%;
-    margin-left: 10%;
+    width: 35%;
+    margin-left: 5%;
   }
   .new__comments-button {
     width: 30%;
@@ -505,6 +460,28 @@ body {
   }
 }
 
+.weatherPage {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px 5%;
+  border-radius: 5px;
+  background-color: #6baa75;
+  -webkit-box-shadow: 5px 10px;
+          box-shadow: 5px 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .weatherPage {
+    width: 40%;
+  }
+}
+
 .footer {
   z-index: 3;
   display: -webkit-box;
@@ -519,6 +496,6 @@ body {
   position: relative;
   width: 100vw;
   height: 153px;
-  background-color: #151313;
+  background-color: #77a6b6;
 }
 /*# sourceMappingURL=main.css.map */
