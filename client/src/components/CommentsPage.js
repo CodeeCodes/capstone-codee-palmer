@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import running from "../assets/svg/running.svg";
-import Draggable from "react-draggable";
 import axios from "axios";
 
 export default function CommentsPage() {
@@ -55,7 +53,7 @@ export default function CommentsPage() {
         <div className="new__comments" key={comment._id}>
           <div className="new__comments-small-div">
             <h4 className="new__comments-name">{comment.name}</h4>
-            <p className="new__comments-date">{originalDate}</p>
+            {/* <p className="new__comments-date">{originalDate}</p> */}
           </div>
           <p className="new__comments-text">{comment.comment}</p>
           <button
@@ -79,9 +77,8 @@ export default function CommentsPage() {
 
   return (
     <div className="comments__page">
-      <Draggable>
-        <div className="comments__page-comments">{newComment}</div>
-      </Draggable>
+      <div className="comments__page-comments">{newComment}</div>
+
       <form
         action="/"
         method="POST"

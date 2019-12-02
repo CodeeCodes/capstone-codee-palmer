@@ -9,23 +9,27 @@
   }
 }
 .new__comments {
+  z-index: 1;
   width: 100%;
-  background-color: #c9e7ff;
-  border: 1px solid rgb(218, 83, 83);
+  background-color: #22282c;
   margin: 15px 0;
   border-radius: 5px;
   box-shadow: 5px 10px;
-
+  &-text {
+    color: #fff;
+  }
   &-input {
     width: 100%;
     height: 100px;
-    background-color: #c9e7ff;
+    background-color: #22282c;
     border-radius: 5px;
+    color: #fff;
 
     &-name {
       width: 100%;
       height: 50px;
-      background-color: #c9e7ff;
+      background-color: #22282c;
+      color: #fff;
       border-radius: 5px;
     }
   }
@@ -41,7 +45,7 @@
   &-button {
     width: 66%;
     height: 30px;
-    background-color: rgb(218, 83, 83);
+    background-color: #777777;
     color: #fff;
     border-radius: 5px;
     margin-top: 20px;
@@ -56,51 +60,61 @@
   &-name {
     margin: 0;
     margin-right: 10%;
+    color: #fff;
   }
   &-date {
     margin: 0;
   }
   &-button-small {
     width: 20%;
-    background-color: rgb(218, 83, 83);
+    background-color: #777777;
     border-radius: 10px;
     color: #fff;
   }
 }
 @include medium {
   .comments__page {
-    width: 40%;
-    padding: 0 5%;
-    .new__comments {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    &-comments {
+      width: 50%;
+      margin-left: 5%;
+    }
+  }
+  .new__comments {
+    width: 100%;
+
+    &-input {
       width: 100%;
+      height: 95px;
 
-      &-input {
+      &-name {
         width: 100%;
-        height: 95px;
-
-        &-name {
-          width: 100%;
-          height: 45px;
-        }
+        height: 45px;
       }
-      &-button {
-        width: 30%;
-        height: 25px;
-        margin-left: 5%;
-        &-div {
-          display: flex;
-          justify-content: flex-start;
-        }
+    }
+    &-form {
+      width: 30%;
+      margin-left: 10%;
+    }
+    &-button {
+      width: 30%;
+      height: 25px;
+      margin-left: 5%;
+      &-div {
+        display: flex;
+        justify-content: flex-start;
       }
-      &-page-heading {
-        &-div {
-          display: flex;
-          justify-content: center;
-        }
+    }
+    &-page-heading {
+      &-div {
+        display: flex;
+        justify-content: center;
       }
-      &-heading {
-        &-small {
-        }
+    }
+    &-heading {
+      &-small {
       }
     }
   }

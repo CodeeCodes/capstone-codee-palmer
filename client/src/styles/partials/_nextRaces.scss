@@ -1,3 +1,15 @@
 .races {
   text-align: center;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 25px;
+
+  &__heading {
+    color: #777777;
+  }
+  &__main {
+    display: flex;
+    height: 170px;
+    overflow: auto;
+  }
 }

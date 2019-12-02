@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import clearSvg from "../assets/svg/clear.svg";
+import Draggable from "react-draggable";
 import running from "../assets/svg/running.svg";
 
 export default function WeatherPage() {
@@ -19,22 +20,39 @@ export default function WeatherPage() {
   useEffect(() => {
     getWeather();
   }, []);
-  console.log(weatherData);
 
   if (Object.keys(weatherData).length > 0) {
     return (
-      <div className="weatherPage">
-        <h3 className="weather__temp">
-          {weatherData.weatherData["temperature"]}
-        </h3>
-        <h3 className="weather__temp">
-          {weatherData.weatherData["windSpeed"]}
-        </h3>
-        <h3 className="weather__temp">{weatherData.weatherData["summary"]}</h3>
-        <h3 className="weather__temp">
-          {weatherData.weatherData["cloudCover"]}
-        </h3>
-        <h3 className="weather__temp">{weatherData.weatherData["pressure"]}</h3>
+      <div>
+        <Draggable>
+          <div className="weatherPage">
+            <div>
+              <h3 className="weather__temp">
+                {weatherData.weatherData["temperature"]}
+              </h3>
+            </div>
+            <div>
+              <h3 className="weather__temp">
+                {weatherData.weatherData["windSpeed"]}
+              </h3>
+            </div>
+            <div>
+              <h3 className="weather__temp">
+                {weatherData.weatherData["summary"]}
+              </h3>
+            </div>
+            <div>
+              <h3 className="weather__temp">
+                {weatherData.weatherData["cloudCover"]}
+              </h3>
+            </div>
+            <div>
+              <h3 className="weather__temp">
+                {weatherData.weatherData["pressure"]}
+              </h3>
+            </div>
+          </div>
+        </Draggable>
       </div>
     );
   } else {

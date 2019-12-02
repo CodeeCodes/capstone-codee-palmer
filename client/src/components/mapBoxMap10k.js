@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
 
-export default function MapBoxMap() {
+export default function MapBoxMap10K() {
   const [viewport, setViewport] = useState({
     latitude: 49.2827,
     longitude: -123.1207,
@@ -16,7 +16,7 @@ export default function MapBoxMap() {
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={viewport => setViewport(viewport)}
-        mapStyle="mapbox://styles/codeecodes/ck3nvfq1b1uk31cqr1lxx8dmf"
+        mapStyle="mapbox://styles/codeecodes/ck3nv8pv13ddd1dqlb96r6rz6"
       >
         <GeolocateControl
           positionOptions={{ enableHighAccuracy: true }}

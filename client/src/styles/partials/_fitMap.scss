@@ -9,6 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &div {
+      width: 600px;
+    }
   }
 }
 @include medium {
@@ -18,7 +21,7 @@
 
     &__main {
       margin: 10px 5%;
-      width: 40%;
+      width: 100%;
       height: 400px;
     }
   }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import axios from "axios";
 import running from "../assets/svg/running.svg";
 
@@ -78,7 +78,11 @@ export default function RunningRoutesFront() {
 
   return (
     <div className="running__page">
-      <h2 variant="secondary" onClick={() => setShow(true)}>
+      <h2
+        variant="secondary"
+        onClick={() => setShow(true)}
+        className="running__page-heading"
+      >
         Routes
       </h2>
       <Modal

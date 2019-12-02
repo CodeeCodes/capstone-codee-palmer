@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Races() {
@@ -29,35 +27,29 @@ export default function Races() {
 
   const renderRacesFront = races.map(function(race) {
     return (
-      <div className="nextRace" key={race.id}>
+      <div className="races" key={race.id}>
         <h3>{race.name}</h3>
         <h4>{race.local_date}</h4>
         <a href={race.link}>{race.link}</a>
       </div>
     );
   });
-  console.log(races);
+
   return (
-    <div className="races">
-      {" "}
-      <h2 variant="secondary" onClick={() => setShow(true)}>
-        Next Races
-      </h2>
-      <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        dialogClassName="modal-90w"
-        aria-labelledby="contained-modal-title-center"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Next Races</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input type="text" onChange={searchRaces} />
-          {renderRacesFront}
-        </Modal.Body>
-      </Modal>
+    <div className="races__main">
+      <div className="races__main">
+        {" "}
+        <h2
+          variant="secondary"
+          onClick={() => setShow(true)}
+          className="races__heading"
+        >
+          Upcoming Races
+        </h2>
+        <input type="text" onChange={searchRaces} />
+      </div>
+
+      {renderRacesFront}
     </div>
   );
 }

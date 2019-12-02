@@ -1,15 +1,13 @@
-.navBar {
+.footer {
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 10px;
   width: 100vw;
-  height: 80px;
+  height: 153px;
   background-color: #151313;
 
   &__heading {
-    color: #777777;
   }
 }
