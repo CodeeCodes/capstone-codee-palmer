@@ -21,7 +21,7 @@ export default function CommentsPage() {
         setTimeout(() => {
           setComments(res.data);
         });
-      }, 15);
+      }, 100);
     event.target.reset();
   };
   // console.log(comments);
@@ -49,7 +49,7 @@ export default function CommentsPage() {
   useEffect(() => {
     setInterval(() => {
       newComments();
-    }, 15);
+    }, 100);
   }, []);
 
   let newComment;

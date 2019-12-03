@@ -7,9 +7,9 @@
 }
 .new__routes-comments {
   width: 100%;
-  border: 1px solid rgb(218, 83, 83);
   margin: 15px 0;
   border-radius: 5px;
+  background-color: #d9f0ff;
   &-input {
     width: 100%;
     height: 40px;
@@ -36,7 +36,7 @@
   &-button {
     width: 66%;
     height: 30px;
-    color: #fff;
+    background-color: #aeecef;
     border-radius: 5px;
     margin-top: 20px;
     &-div {
@@ -57,7 +57,7 @@
   &-button-small {
     width: 20%;
     border-radius: 10px;
-    color: #fff;
+    background-color: #aeecef;
   }
 }
 @include medium {

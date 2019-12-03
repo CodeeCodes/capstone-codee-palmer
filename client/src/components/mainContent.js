@@ -3,7 +3,7 @@ import MapBoxMap from "./mapBoxMap";
 import MapBox10K from "./mapBoxMap10k";
 import MapBox5K from "./mapBox5K";
 import { useSpring } from "react-spring";
-import halfMarathon from "../assets/photos/half-marathon.jpg";
+import halfMarathon from "../assets/photos/marathon.jpg";
 import Marathon10K from "../assets/photos/10K.jpg";
 import Marathon5K from "../assets/photos/5K.jpg";
 import WeatherPage from "./weatherPage";
@@ -22,9 +22,7 @@ export default function MainContent() {
   return (
     <div className="main">
       <div style={props} className="main-flex-top">
-        <div className="main-maps-top">
-          <WeatherPage />
-        </div>
+        <WeatherPage />
         <div className="main__maps">
           <h4 onClick={() => setMarathonMap(!showMarathonMap)}>
             Half Marathon

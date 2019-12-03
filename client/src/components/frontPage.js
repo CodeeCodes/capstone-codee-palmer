@@ -12,6 +12,7 @@ export default function FrontPage() {
     event.preventDefault();
     axios
       .post(loginUrl, {
+        // headers: { Authorization: `Bearer ${localStorage.authToken}` },
         email: event.target.email.value,
         password: event.target.password.value
       })

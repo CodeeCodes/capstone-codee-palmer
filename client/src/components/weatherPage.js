@@ -21,33 +21,36 @@ export default function WeatherPage() {
 
   if (Object.keys(weatherData).length > 0) {
     return (
-      <div>
-        <div className="weatherPage">
-          <div>
-            <h3 className="weather__temp">
-              {weatherData.weatherData["temperature"]}
-            </h3>
-          </div>
-          <div>
-            <h3 className="weather__temp">
-              {weatherData.weatherData["windSpeed"]}
-            </h3>
-          </div>
-          <div>
-            <h3 className="weather__temp">
-              {weatherData.weatherData["summary"]}
-            </h3>
-          </div>
-          <div>
-            <h3 className="weather__temp">
-              {weatherData.weatherData["cloudCover"]}
-            </h3>
-          </div>
-          <div>
-            <h3 className="weather__temp">
-              {weatherData.weatherData["pressure"]}
-            </h3>
-          </div>
+      <div className="weatherPage">
+        <div>
+          <h5 className="weather__temp">Temp:</h5>
+          <h5 className="weather__temp">
+            {weatherData.weatherData["temperature"]}
+          </h5>
+        </div>
+        <div>
+          <h5 className="weather__temp">Wind speed:</h5>
+          <h5 className="weather__temp">
+            {weatherData.weatherData["windSpeed"]}
+          </h5>
+        </div>
+        <div>
+          <h5 className="weather__temp">Summary:</h5>
+          <h5 className="weather__temp">
+            {weatherData.weatherData["summary"]}
+          </h5>
+        </div>
+        <div>
+          <h5 className="weather__temp">Cloud cover:</h5>
+          <h5 className="weather__temp">
+            {weatherData.weatherData["cloudCover"]}
+          </h5>
+        </div>
+        <div>
+          <h5 className="weather__temp">Temp:</h5>
+          <h5 className="weather__temp">
+            {weatherData.weatherData["pressure"]}
+          </h5>
         </div>
       </div>
     );

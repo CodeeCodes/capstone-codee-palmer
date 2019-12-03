@@ -4,9 +4,9 @@ import RunningRoutes from "./runningRoutesFront";
 
 export default function MapBoxMap5K() {
   const [viewport, setViewport] = useState({
-    latitude: 49.2827,
-    longitude: -123.1207,
-    zoom: 10,
+    latitude: 49.29875,
+    longitude: -123.1204,
+    zoom: 13,
     width: "500px",
     height: "400px"
   });
