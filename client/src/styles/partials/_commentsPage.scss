@@ -1,10 +1,8 @@
 .comments__page {
   margin: 10px 5%;
   text-align: center;
-  background-color: #6baa75;
-
   &-comments {
-    height: 400px;
+    height: 300px;
     overflow: auto;
   }
   &-image {
@@ -19,7 +17,7 @@
 .new__comments {
   z-index: 1;
   width: 100%;
-  background-color: #77a6b6;
+  background-color: #d9f0ff;
   margin: 15px 0;
   border-radius: 5px;
 
@@ -29,14 +27,14 @@
   &-input {
     width: 100%;
     height: 100px;
-    background-color: #77a6b6;
+    background-color: #d9f0ff;
     border-radius: 5px;
     color: #fff;
 
     &-name {
       width: 100%;
       height: 50px;
-      background-color: #77a6b6;
+      background-color: #d9f0ff;
       color: #fff;
       border-radius: 5px;
     }
@@ -53,7 +51,7 @@
   &-button {
     width: 66%;
     height: 30px;
-    background-color: #7ac74f;
+    background-color: #aeecef;
     color: #fff;
     border-radius: 5px;
     margin-top: 20px;
@@ -74,17 +72,17 @@
   }
   &-button-small {
     width: 20%;
-    background-color: #7ac74f;
+    background-color: #aeecef;
     border-radius: 10px;
     color: #fff;
   }
 }
 @include medium {
   .comments__page {
-    width: 100%;
+    width: 50%;
     margin: 0;
     &-comments {
-      width: 35%;
+      width: 75%;
       margin-left: 5%;
       height: 235px;
     }
@@ -102,7 +100,7 @@
       }
     }
     &-form {
-      width: 35%;
+      width: 75%;
       margin-left: 5%;
     }
     &-button {

@@ -6,7 +6,7 @@ export default function Races() {
   const corsURL = "https://cors-anywhere.herokuapp.com/";
   const [races, setRaces] = useState([]);
   const [show, setShow] = useState(false);
-  const [searchState, setSearchState] = useState({ search: "" });
+  const [searchState, setSearchState] = useState([]);
 
   const getRaces = () => {
     axios.get(`${corsURL}${runUrl}`).then(res => {
@@ -18,12 +18,19 @@ export default function Races() {
     getRaces();
   }, []);
 
-  const searchRaces = e => {
-    let filteredRaces = races.filter(race => {
-      return race.name.toLowerCase().indexOf(race.name) !== -1;
+  function searchRaces(e) {
+    let filteredRaces = races.map(race => {
+      // const search = e.toLowerCase();
+      // console.log(run, e.target.value);
+      const searchResult =
+        race.name.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
+
+      console.log(searchResult, race.name);
+      return searchResult;
     });
-    setSearchState(filteredRaces);
-  };
+
+    setSearchState([...searchState, filteredRaces]);
+  }
 
   const renderRacesFront = races.map(function(race) {
     return (
@@ -38,6 +45,9 @@ export default function Races() {
   return (
     <div className="races__main">
       <div className="races__main">
+        <input type="text" onChange={searchRaces} />
+      </div>
+      <div className="races__main">
         {" "}
         <h2
           variant="secondary"
@@ -46,7 +56,6 @@ export default function Races() {
         >
           Upcoming Races
         </h2>
-        <input type="text" onChange={searchRaces} />
       </div>
 
       {renderRacesFront}

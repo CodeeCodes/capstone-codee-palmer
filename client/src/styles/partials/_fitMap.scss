@@ -16,44 +16,53 @@
 // }
 .main-flex {
   display: inline-block;
-  margin: 0 5%;
+  width: 100vw;
+}
+.main__maps {
+  height: 200px;
+  width: 100%;
+  margin: 40px 0;
 
-
-  .main__maps {
-    height: 200px;
+  text-align: center;
+  &-image {
     width: 100%;
-    margin: 40px 0;
-
-    text-align: center;
-    &-image {
-      width: 100%;
-      height: 100%;
-    }
+    height: 100%;
   }
 }
+
 @include medium {
   .main-flex {
     display: flex;
     flex-wrap: wrap;
-
-    .main__maps {
-      height: 200px;
-      width: 25%;
-      text-align: center;
-      &-image {
-        width: 150px;
-        height: 100px;
-      }
+  }
+  .main-flex-top {
+    display: flex;
+  }
+  .main__maps {
+    height: 200px;
+    width: 15%;
+    text-align: center;
+    &-top {
+      width: 50%;
+    }
+    &-image {
+      width: 150px;
+      height: 100px;
     }
   }
-  // .map {
-  //   width: 100%;
-  //   height: 70%;
-
-  //   &__main {
-  //     margin: 10px 5%;
-  //     width: 100%;
-  //     height: 400px;
-  //   }
-  // }
+  .main__maps-active {
+    position: relative;
+    right: 259px;
+    top: 76px;
+  }
 }
+// .map {
+//   width: 100%;
+//   height: 70%;
+
+//   &__main {
+//     margin: 10px 5%;
+//     width: 100%;
+//     height: 400px;
+//   }
+// }

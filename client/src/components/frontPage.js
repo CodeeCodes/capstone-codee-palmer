@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSpring, animated } from "react-spring";
-import running from "../assets/svg/running.svg";
+import running from "../assets/svg/jogging.svg";
 const loginUrl = "http://localhost:5000/login";
 
 export default function FrontPage() {

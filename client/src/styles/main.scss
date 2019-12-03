@@ -7,14 +7,13 @@ body {
   color: #323232;
   height: 100vh;
   box-sizing: border-box;
+  background-color: #d9f0ff;
+  background: fixed;
 
   a {
     text-decoration: none;
     color: #323232;
   }
-}
-body {
-  background-color: #f4e87c;
 }
 
 /* Enforces border-box for whole site */

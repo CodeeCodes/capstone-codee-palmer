@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
   // console.log(req.headers);
   try {
     Comment.find()
-      .sort({ date: 1 })
+      .sort({ date: -1 })
       .then(comments => res.json(comments));
   } catch (er) {
     console.log("Error fetching data", er);

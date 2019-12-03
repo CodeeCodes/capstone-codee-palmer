@@ -1,16 +1,42 @@
 .races {
   text-align: center;
-  background-color: #77a6b6;
+  background-color: #6d9dc5;
+  color: #d9f0ff;
   margin: 10px;
   border-radius: 5px;
+  margin: 0 5%;
 
   &__heading {
     color: #777777;
   }
   &__main {
     display: flex;
-    height: 170px;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 7.5%;
+    height: 300px;
     overflow: auto;
-    background-color: #f4e87c;
+    background-color: #6d9dc5;
+  }
+}
+@include medium {
+  .races {
+    text-align: center;
+    background-color: #6d9dc5;
+    margin: 10px;
+    border-radius: 5px;
+
+    &__heading {
+      color: #777777;
+    }
+    &__main {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      width: 50%;
+      height: 595px;
+      overflow: auto;
+      background-color: #6d9dc5;
+    }
   }
 }
