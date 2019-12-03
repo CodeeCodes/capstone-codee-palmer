@@ -12,7 +12,6 @@ import RacesPage from "./races";
 import Footer from "./footer";
 
 export default function MainContent() {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const [showMarathonMap, setMarathonMap] = useState(false);
   const [showMarathonMap10K, setMarathonMap10K] = useState(false);
   const [showMarathonMap5K, setMarathonMap5K] = useState(false);
@@ -21,7 +20,7 @@ export default function MainContent() {
 
   return (
     <div className="main">
-      <div style={props} className="main-flex-top">
+      <div className="main-flex-top">
         <WeatherPage />
         <div className="main__maps">
           <h4 onClick={() => setMarathonMap(!showMarathonMap)}>
@@ -41,7 +40,7 @@ export default function MainContent() {
           <img src={Marathon5K} alt="marathon" className="main__maps-image" />
         </div>
       </div>
-      <div style={props} className="main-flex">
+      <div className="main-flex">
         <Comments />
         <RacesPage />
       </div>

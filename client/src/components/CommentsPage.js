@@ -7,7 +7,7 @@ export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
   const useForceUpdate = () => useState()[1];
-  const forceUpdate = useForceUpdate();
+  // const forceUpdate = useForceUpdate();
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -18,10 +18,9 @@ export default function CommentsPage() {
         comment: event.target.comment.value
       })
       .then(res => {
-        setTimeout(() => {
-          setComments(res.data);
-        });
-      }, 100);
+        // console.log(res.data);
+        setComments([res.data, ...comments]);
+      });
     event.target.reset();
   };
   // console.log(comments);
@@ -37,21 +36,18 @@ export default function CommentsPage() {
   const deleteComment = async e => {
     await axios
       .delete(`${commentsUrl}/${e.target.id}`)
-      .then(res => setComments(res.data));
+      .then(res => setComments([...comments]));
   };
-  const newComments = () => {
-    axios
-      .get(commentsUrl, {
-        headers: { Authorization: `Bearer ${localStorage.authToken}` }
-      })
-      .then(res => setComments(res.data));
+  const newComments = async () => {
+    const result = await axios.get(commentsUrl, {
+      headers: { Authorization: `Bearer ${localStorage.authToken}` }
+    });
+    setComments(result.data);
   };
   useEffect(() => {
-    setInterval(() => {
-      newComments();
-    }, 100);
-  }, []);
-
+    newComments();
+  }, [setComments]);
+  console.log(comments);
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
@@ -115,9 +111,7 @@ export default function CommentsPage() {
           className="new__comments-input"
         />
         <div className="new__comments-button-div">
-          <button className="new__comments-button" onClick={forceUpdate}>
-            SAVE
-          </button>
+          <button className="new__comments-button">SAVE</button>
         </div>
       </form>
       <div className="comments__page-comments">{newComment}</div>

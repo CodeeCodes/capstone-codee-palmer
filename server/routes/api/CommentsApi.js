@@ -38,7 +38,7 @@ router.delete("/:id", (req, res) => {
     comment
       .remove()
       .then(() => res.json({ success: true }))
-      .catch(er => res.status(404).json({ success: false }))
+      .catch(er => res.status(404))
   );
 });
 router.put("/:id", (req, res) => {
