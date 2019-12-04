@@ -37,14 +37,18 @@
     flex-wrap: wrap;
   }
   .main-flex-top {
+    height: 676px;
+    width: 90%;
+    margin-left: 43px;
+    overflow-x: auto;
     display: flex;
-    flex-wrap: wrap;
   }
   .main__maps {
-    height: 300px;
-    width: 31%;
+    height: 559px;
+    width: 100%;
     text-align: center;
-    margin: 16px;
+    margin: 0;
+    margin: 0 10%;
     margin-bottom: 94px;
 
     &-top {
@@ -61,30 +65,36 @@
     right: 259px;
     top: 76px;
   }
-}
-.map {
-  &__main {
-    width: 900px;
-    height: 900px;
-    position: relative;
-    bottom: 90px;
-    right: 527px;
-    z-index: 2;
-    &-marathon {
-      width: 900px;
-      height: 900px;
-      position: relative;
+  .main__race-flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .map {
+    &__main {
+      width: 100%;
+      height: 100%;
+      // position: relative;
       bottom: 90px;
-      right: 15px;
+      right: 494px;
       z-index: 2;
-    }
-    &-five {
-      width: 900px;
-      height: 900px;
-      position: relative;
-      bottom: 55px;
-      right: 1041px;
       z-index: 2;
+      &-marathon {
+        width: 100%;
+        height: 559px;
+        // position: relative;
+        bottom: 90px;
+        right: 15px;
+        z-index: 2;
+      }
+      &-five {
+        width: 100%;
+        height: 559px;
+        // position: relative;
+        bottom: 55px;
+        right: 976px;
+        z-index: 2;
+      }
     }
   }
 }

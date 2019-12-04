@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import running from "../assets/svg/running.svg";
 import axios from "axios";
-
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
-  // const useForceUpdate = () => useState()[1];
-  // const forceUpdate = useForceUpdate();
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -23,14 +20,6 @@ export default function CommentsPage() {
     event.target.reset();
   };
   // console.log(comments);
-  const updateComment = event => {
-    axios.put(commentsUrl, {
-      name: event.target.user.value,
-      comment: event.target.comment.value
-    });
-    // .then(res => {
-    //   setComments(res.data);
-  };
 
   const deleteComment = async e => {
     await axios
@@ -70,12 +59,8 @@ export default function CommentsPage() {
           >
             Delete
           </button>
-          <button
-            className="new__comments-button-small"
-            onClick={updateComment}
-          >
-            Edit
-          </button>
+        
+      
         </div>
       );
     });
@@ -114,7 +99,6 @@ export default function CommentsPage() {
         </div>
       </form>
       <div className="comments__page-comments">{newComment}</div>
-    
     </div>
   );
 }

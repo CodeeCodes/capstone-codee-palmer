@@ -27,7 +27,7 @@ export default function RunningRoutesFront() {
           comment: event.target.comment.value
         })
         .then(res => {
-          setRoutes(res.data);
+          setRoutes([res.data, ...routes]);
         });
       event.target.reset();
     }
@@ -40,7 +40,7 @@ export default function RunningRoutesFront() {
 
   useEffect(() => {
     newRoutes();
-  }, []);
+  }, [setRoutes]);
   let newRoutesDisplay;
   if (routes.length >= 0) {
     newRoutesDisplay = routes.map(function(route) {
@@ -54,9 +54,11 @@ export default function RunningRoutesFront() {
         <div className="new__routes-comments" key={route._id}>
           <div className="new__routes-comments-small-div">
             <h4 className="new__routes-comments-name">{route.name}</h4>
+            <p className="new__routes-comments-date">{route.age}</p>
             <p className="new__routes-comments-date">{route.date}</p>
           </div>
           <p className="new__-routes-comments-text">{route.comment}</p>
+
           <button
             id={route._id}
             onClick={deleteRoute}

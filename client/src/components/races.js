@@ -37,14 +37,18 @@ export default function Races() {
         <h3>{race.name}</h3>
         <h4>{race.local_date}</h4>
         <a href={race.link}>
-          <img src={meetUpLogo} alt="meetup logo" className="races__main-logo"/>
+          <img
+            src={meetUpLogo}
+            alt="meetup logo"
+            className="races__main-logo"
+          />
         </a>
       </div>
     );
   });
 
   return (
-    <div>
+    <div className="races-main">
       {" "}
       <form className="races__search" onSubmit={searchRaces}>
         <input type="text" name="raceSearch" />

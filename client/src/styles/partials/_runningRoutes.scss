@@ -3,6 +3,7 @@
   border-radius: 10px;
   background-color: $sprintYellow;
   border: 1px solid $sprintBlack;
+  text-align: center;
   &-heading {
     color: $sprintBlack;
   }
@@ -11,17 +12,17 @@
   width: 100%;
   margin: 15px 0;
   border-radius: 5px;
-  background-color: #d9f0ff;
+  background-color: $sprintLightBlue;
   &-input {
     width: 100%;
     height: 40px;
-    background-color: #c9e7ff;
+    background-color: $sprintWhite;
     border-radius: 5px;
 
     &-name {
       width: 100%;
       height: 40px;
-      background-color: #c9e7ff;
+      background-color: $sprintWhite;
 
       border-radius: 5px;
     }
@@ -38,7 +39,8 @@
   &-button {
     width: 66%;
     height: 30px;
-    background-color: #aeecef;
+    background-color: $sprintYellow;
+    text-align: center;
     border-radius: 5px;
     margin-top: 20px;
     &-div {
@@ -59,12 +61,11 @@
   &-button-small {
     width: 20%;
     border-radius: 10px;
-    background-color: #aeecef;
+    background-color: $sprintYellow;
   }
 }
 @include medium {
   .running__page {
-    margin: 0px 50%;
   }
   .new__routes {
     width: 100%;

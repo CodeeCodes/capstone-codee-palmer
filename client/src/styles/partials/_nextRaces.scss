@@ -30,6 +30,10 @@
     background-color: #6d9dc5;
     margin: 10px;
     border-radius: 5px;
+    &-main {
+      width: 40%;
+    }
+
     &__main {
       display: flex;
       flex-direction: column;
