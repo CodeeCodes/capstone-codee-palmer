@@ -17,7 +17,7 @@ body a {
 }
 
 #root {
-  background-color: #e7ecef;
+  background-color: #fcfcfc;
 }
 
 /* Enforces border-box for whole site */
@@ -77,10 +77,12 @@ body a {
 .running__page {
   margin: 10px 5%;
   border-radius: 10px;
+  background-color: #f7ff58;
+  border: 1px solid #0f0f0f;
 }
 
 .running__page-heading {
-  color: #777777;
+  color: #0f0f0f;
 }
 
 .new__routes-comments {
@@ -161,7 +163,7 @@ body a {
 
 @media only screen and (min-width: 768px) {
   .running__page {
-    padding: 0 5%;
+    margin: 0px 50%;
   }
   .new__routes {
     width: 100%;
@@ -211,8 +213,26 @@ body a {
 }
 
 .main__maps-image {
-  width: 100%;
+  width: 90%;
   height: 100%;
+}
+
+.map__main {
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.map__main-marathon {
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.map__main-five {
+  width: 100px;
+  height: 100px;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 768px) {
@@ -227,18 +247,23 @@ body a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .main__maps {
-    height: 200px;
-    width: 15%;
+    height: 300px;
+    width: 31%;
     text-align: center;
+    margin: 16px;
+    margin-bottom: 94px;
   }
   .main__maps-top {
     width: 50%;
   }
   .main__maps-image {
-    width: 190px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
+    display: block;
   }
   .main__maps-active {
     position: relative;
@@ -248,11 +273,29 @@ body a {
 }
 
 .map__main {
-  width: 750px;
-  height: 600px;
+  width: 900px;
+  height: 900px;
   position: relative;
-  top: 25px;
-  right: 125px;
+  bottom: 90px;
+  right: 527px;
+  z-index: 2;
+}
+
+.map__main-marathon {
+  width: 900px;
+  height: 900px;
+  position: relative;
+  bottom: 90px;
+  right: 15px;
+  z-index: 2;
+}
+
+.map__main-five {
+  width: 900px;
+  height: 900px;
+  position: relative;
+  bottom: 55px;
+  right: 1041px;
   z-index: 2;
 }
 
@@ -266,7 +309,7 @@ body a {
 }
 
 .races__heading {
-  color: #777777;
+  color: #f7ff58;
 }
 
 .races__main {
@@ -285,15 +328,17 @@ body a {
   border-radius: 15px;
 }
 
+.races__main-logo {
+  width: 100%;
+  height: 100px;
+}
+
 @media only screen and (min-width: 768px) {
   .races {
     text-align: center;
     background-color: #6d9dc5;
     margin: 10px;
     border-radius: 5px;
-  }
-  .races__heading {
-    color: #777777;
   }
   .races__main {
     display: -webkit-box;
@@ -304,8 +349,7 @@ body a {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0;
-    width: 40%;
-    height: 512px;
+    height: 453px;
     overflow: auto;
     background-color: #6d9dc5;
   }
@@ -326,11 +370,11 @@ body a {
   margin-bottom: 10px;
   width: 100vw;
   height: 80px;
-  background-color: #3066be;
+  background-color: #0b3954;
 }
 
 .navBar__heading {
-  color: #aeecef;
+  color: #f7ff58;
 }
 
 .front__page {
@@ -395,7 +439,7 @@ body a {
 .new__comments {
   z-index: 1;
   width: 100%;
-  background-color: #6d9dc5;
+  background-color: #bfd7ea;
   margin: 15px 0;
   border-radius: 5px;
 }
@@ -443,8 +487,8 @@ body a {
 .new__comments-button {
   width: 66%;
   height: 30px;
-  background-color: #6d9dc5;
-  color: #fff;
+  background-color: #f7ff58;
+  color: #0f0f0f;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -469,20 +513,28 @@ body a {
 
 .new__comments-button-small {
   width: 20%;
-  background-color: #6d9dc5;
+  background-color: #f7ff58;
   border-radius: 10px;
-  color: #fff;
+  color: #0f0f0f;
 }
 
 @media only screen and (min-width: 768px) {
   .comments__page {
-    width: 50%;
+    width: 35%;
     margin: 0;
   }
   .comments__page-comments {
     width: 75%;
     margin-left: 5%;
     height: 235px;
+  }
+  .comments__page-image {
+    height: 100%;
+    width: 100%;
+  }
+  .comments__page-image-div {
+    width: 17%;
+    height: 488px;
   }
   .new__comments {
     width: 100%;
@@ -544,8 +596,9 @@ body a {
 
 @media only screen and (min-width: 768px) {
   .weatherPage {
-    width: 27%;
-    height: 215px;
+    width: 50%;
+    height: 57px;
+    margin-left: 45%;
   }
 }
 
@@ -561,8 +614,8 @@ body a {
           align-items: center;
   position: relative;
   width: 100vw;
-  height: 100px;
-  background-color: #3066be;
+  height: 200px;
+  background-color: #0b3954;
 }
 
 .footer__social-icons {
@@ -576,5 +629,9 @@ body a {
   display: flex;
   height: 50px;
   width: 30%;
+}
+
+.footer__social-heading {
+  color: #f7ff58;
 }
 /*# sourceMappingURL=main.css.map */

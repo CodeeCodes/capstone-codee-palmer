@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
-import RunningRoutes from "./runningRoutesFront";
+
 
 export default function MapBoxMap5K() {
   const [viewport, setViewport] = useState({
     latitude: 49.29875,
     longitude: -123.1204,
     zoom: 13,
-    width: "500px",
-    height: "400px"
+    width: "100vw",
+    height: "100%"
   });
 
   return (
-    <div className="map__main">
+    <div className="map__main-five">
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -24,7 +24,7 @@ export default function MapBoxMap5K() {
           trackUserLocation={true}
         />
       </ReactMapGL>
-      <RunningRoutes />
+  
     </div>
   );
 }

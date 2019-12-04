@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import running from "../assets/svg/running.svg";
-import runningMain from "../assets/svg/runningMain.svg";
 import axios from "axios";
 
 export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
-  const useForceUpdate = () => useState()[1];
+  // const useForceUpdate = () => useState()[1];
   // const forceUpdate = useForceUpdate();
 
   const uploadNewComment = event => {
@@ -36,7 +35,7 @@ export default function CommentsPage() {
   const deleteComment = async e => {
     await axios
       .delete(`${commentsUrl}/${e.target.id}`)
-      .then(res => setComments([...comments]));
+      .then(res => setComments([...comments, res.data]));
   };
   const newComments = async () => {
     const result = await axios.get(commentsUrl, {
@@ -51,11 +50,11 @@ export default function CommentsPage() {
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
-      let timeStamp = comment.date;
-      let toDate = new Date(timeStamp).getDate();
-      let toMonth = new Date(timeStamp).getMonth() + 1;
-      let toYear = new Date(timeStamp).getFullYear();
-      let originalDate = toMonth + "/" + toDate + "/" + toYear;
+      // let timeStamp = comment.date;
+      // let toDate = new Date(timeStamp).getDate();
+      // let toMonth = new Date(timeStamp).getMonth() + 1;
+      // let toYear = new Date(timeStamp).getFullYear();
+      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
 
       return (
         <div className="new__comments" key={comment._id}>
@@ -115,9 +114,7 @@ export default function CommentsPage() {
         </div>
       </form>
       <div className="comments__page-comments">{newComment}</div>
-      <div className="comments__page-image-div">
-        <img className="comments__page-image" src={runningMain} alt="" />
-      </div>
+    
     </div>
   );
 }

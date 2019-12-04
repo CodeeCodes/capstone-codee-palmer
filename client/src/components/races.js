@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import meetUpLogo from "../assets/svg/meetup-vector-logo.svg";
 
 export default function Races() {
   const runUrl = "https://api.meetup.com/VanRun/events";
   const corsURL = "https://cors-anywhere.herokuapp.com/";
   const [races, setRaces] = useState([]);
   const [show, setShow] = useState(false);
-  const [searchState, setSearchState] = useState([]);
+  // const [searchState, setSearchState] = useState([]);
 
   const getRaces = () => {
     axios.get(`${corsURL}${runUrl}`).then(res => {
@@ -14,51 +15,54 @@ export default function Races() {
     });
   };
 
+  function searchRaces(e) {
+    e.preventDefault();
+    e.persist();
+    const input = e.target.raceSearch.value;
+    console.log(input);
+    const searchResult = races.filter(obj =>
+      obj.name.toLowerCase().includes(input.toLowerCase())
+    );
+    console.log(searchResult);
+    setRaces([searchResult]);
+  }
+
   useEffect(() => {
     getRaces();
   }, []);
-
-  function searchRaces(e) {
-    let filteredRaces = races.map(race => {
-      // const search = e.toLowerCase();
-      // console.log(run, e.target.value);
-      const searchResult =
-        race.name.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
-
-      console.log(searchResult, race.name);
-      return searchResult;
-    });
-
-    setSearchState([...searchState, filteredRaces]);
-  }
 
   const renderRacesFront = races.map(function(race) {
     return (
       <div className="races" key={race.id}>
         <h3>{race.name}</h3>
         <h4>{race.local_date}</h4>
-        <a href={race.link}>{race.link}</a>
+        <a href={race.link}>
+          <img src={meetUpLogo} alt="meetup logo" className="races__main-logo"/>
+        </a>
       </div>
     );
   });
 
   return (
-    <div className="races__main">
+    <div>
+      {" "}
+      <form className="races__search" onSubmit={searchRaces}>
+        <input type="text" name="raceSearch" />
+      </form>
       <div className="races__main">
-        <input type="text" onChange={searchRaces} />
-      </div>
-      <div className="races__main">
-        {" "}
-        <h2
-          variant="secondary"
-          onClick={() => setShow(true)}
-          className="races__heading"
-        >
-          Upcoming Races
-        </h2>
-      </div>
+        <div className="races">
+          {" "}
+          <h2
+            variant="secondary"
+            onClick={() => setShow(true)}
+            className="races__heading"
+          >
+            Upcoming Races
+          </h2>
+        </div>
 
-      {renderRacesFront}
+        {renderRacesFront}
+      </div>
     </div>
   );
 }

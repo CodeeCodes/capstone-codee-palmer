@@ -1,8 +1,10 @@
 .running__page {
   margin: 10px 5%;
   border-radius: 10px;
+  background-color: $sprintYellow;
+  border: 1px solid $sprintBlack;
   &-heading {
-    color: #777777;
+    color: $sprintBlack;
   }
 }
 .new__routes-comments {
@@ -62,7 +64,7 @@
 }
 @include medium {
   .running__page {
-    padding: 0 5%;
+    margin: 0px 50%;
   }
   .new__routes {
     width: 100%;

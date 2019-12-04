@@ -5,13 +5,13 @@ export default function MapBoxMap() {
   const [viewport, setViewport] = useState({
     latitude: 49.2827,
     longitude: -123.1207,
-    zoom: 10,
-    width: "500px",
-    height: "400px"
+    zoom: 11.8,
+    width: "100vw",
+    height: "100%"
   });
 
   return (
-    <div className="map__main">
+    <div className="map__main-marathon">
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}

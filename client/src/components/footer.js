@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footer__social-div">
-        <h6>Created by Codee</h6>
+        <h6 className="footer__social-heading">Created by Codee</h6>
         <img
           src={linkedInSvg}
           alt="linkedin"

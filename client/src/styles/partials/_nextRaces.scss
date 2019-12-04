@@ -7,7 +7,7 @@
   margin: 0 5%;
 
   &__heading {
-    color: #777777;
+    color: $sprintYellow;
   }
   &__main {
     display: flex;
@@ -18,6 +18,10 @@
     overflow: auto;
     background-color: #6d9dc5;
     border-radius: 15px;
+    &-logo {
+      width: 100%;
+      height: 100px;
+    }
   }
 }
 @include medium {
@@ -26,16 +30,11 @@
     background-color: #6d9dc5;
     margin: 10px;
     border-radius: 5px;
-
-    &__heading {
-      color: #777777;
-    }
     &__main {
       display: flex;
       flex-direction: column;
       margin: 0;
-      width: 40%;
-      height: 512px;
+      height: 453px;
       overflow: auto;
       background-color: #6d9dc5;
     }
