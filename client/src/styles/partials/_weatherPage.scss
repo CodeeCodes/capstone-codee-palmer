@@ -4,10 +4,17 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 136px;
   margin: 10px 5%;
   border-radius: 5px;
   background-color: #6d9dc5;
-  box-shadow: 5px 10px;
+
+  &:hover {
+    background: none;
+    padding: 10px 10px;
+    border: 2px solid $sprintBlack;
+    background-color: $sprintYellow;
+  }
 }
 @include medium {
   .weatherPage {

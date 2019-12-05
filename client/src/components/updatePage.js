@@ -19,6 +19,13 @@ export default function UpdatePage() {
   };
   return (
     <div className="update__page">
+      <h6
+        variant="secondary"
+        onClick={() => setShow(true)}
+        className="running__page-heading"
+      >
+        Update Comment
+      </h6>
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -32,7 +39,7 @@ export default function UpdatePage() {
         <Modal.Body>
           <form
             action="/"
-            method="POST"
+            method="PUT"
             onSubmit={updateComment}
             className="new__comments-form"
           >

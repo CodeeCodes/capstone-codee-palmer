@@ -1,12 +1,17 @@
 .main-flex {
   display: inline-block;
   width: 100vw;
+  &-top {
+    height: 400px;
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+  }
 }
 .main__maps {
-  height: 200px;
+  height: 300px;
   width: 100%;
-  margin: 40px 0;
-
+  margin: 0 40px;
   text-align: center;
   &-image {
     width: 90%;
@@ -15,17 +20,17 @@
 }
 .map {
   &__main {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 300px;
     z-index: 2;
     &-marathon {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 300px;
       z-index: 2;
     }
     &-five {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 300px;
       z-index: 2;
     }
   }
@@ -39,7 +44,6 @@
   .main-flex-top {
     height: 676px;
     width: 90%;
-    margin-left: 43px;
     overflow-x: auto;
     display: flex;
   }

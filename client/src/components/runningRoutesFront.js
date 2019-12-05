@@ -66,7 +66,6 @@ export default function RunningRoutesFront() {
           >
             Delete
           </button>
-          <button className="new__routes-comments-button-small">Edit</button>
         </div>
       );
     });
@@ -118,7 +117,7 @@ export default function RunningRoutesFront() {
               placeholder="Comment"
               className="new__routes-comments-input"
             />
-            <h4 className="new__routes-comments-heading-small">Routes</h4>
+            <h4 className="new__routes-comments-heading-small">Route</h4>
             <input
               type="text"
               name="route"

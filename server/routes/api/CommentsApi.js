@@ -41,13 +41,13 @@ router.delete("/:id", (req, res) => {
       .catch(er => res.status(404))
   );
 });
-router.put("/:id", (req, res) => {
-  // console.log(req.params.id);
-  Comment.findById(req.params.id).then(comment =>
-    comment
-      .update()
-      .then(() => res.json({ success: true }))
-      .catch(er => res.status(404).json({ success: false }))
+router.patch("/:id", (req, res) => {
+  console.log(req.params.id);
+  Comment.findByIdAndUpdate(
+    req.params.id,
+    { $set: { name: req.body.name, comment: req.body.comment } },
+    { new: true }
   );
+  res.status(200).json({ msg: "work" });
 });
 module.exports = router;

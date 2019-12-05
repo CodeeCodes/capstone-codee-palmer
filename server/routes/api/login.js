@@ -35,6 +35,7 @@ const loginValidation = data => {
 router.post("/", async (req, res) => {
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error);
+  console.log(error);
 
   //checking if email exists
   const emailExists = await User.find({
