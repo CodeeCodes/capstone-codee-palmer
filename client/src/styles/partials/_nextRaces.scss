@@ -1,6 +1,6 @@
 .races {
   text-align: center;
-  background-color: #6d9dc5;
+  background-color: sprintBeige;
   color: #d9f0ff;
   margin: 10px;
   border-radius: 5px;
@@ -13,7 +13,7 @@
     margin-left: 7.5%;
     height: 300px;
     overflow: auto;
-    background-color: #6d9dc5;
+    background-color: $sprintLightGreen;
     border-radius: 15px;
     &-logo {
       width: 100%;
@@ -27,19 +27,19 @@
       width: 79%;
 
       &:hover {
-        border: 3px solid $sprintYellow;
+        border: 3px solid $sprintOrange;
       }
     }
   }
   &__main-heading {
-    color: $sprintDarkBlue;
+    color: $sprintBeige;
     text-align: center;
   }
 }
 @include medium {
   .races {
     text-align: center;
-    background-color: #6d9dc5;
+    background-color: sprintBeige;
     margin: 10px;
     border-radius: 5px;
     &-main {
@@ -52,7 +52,6 @@
       margin: 0;
       height: 453px;
       overflow: auto;
-      background-color: #6d9dc5;
     }
   }
 }

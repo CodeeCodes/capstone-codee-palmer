@@ -54,8 +54,7 @@ export default function Races() {
         <input type="text" name="raceSearch" className="races__search-input" />
       </form>
       <div className="races__main">
-        <div className="races"> </div>
-        {renderRacesFront}
+        <div className="races">{renderRacesFront}</div>
       </div>
     </div>
   );

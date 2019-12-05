@@ -1,7 +1,7 @@
 .running__page {
   margin: 10px 5%;
   border-radius: 10px;
-  background-color: $sprintLightBlue;
+  background-color: $sprintLightGreen;
   border: 1px solid $sprintBlack;
   text-align: center;
   transition: all 0.5s, ease 0s, linear 0.5s;
@@ -10,7 +10,7 @@
     background: none;
     padding: 10px 10px;
     border: 2px solid $sprintBlack;
-    background-color: $sprintYellow;
+    background-color: $sprintOrange;
   }
   &-heading {
     color: $sprintBlack;
@@ -20,7 +20,7 @@
   width: 100%;
   margin: 15px 0;
   border-radius: 5px;
-  background-color: $sprintLightBlue;
+  background-color: $sprintLightGreen;
   &-input {
     width: 100%;
     height: 40px;
@@ -47,7 +47,7 @@
   &-button {
     width: 66%;
     height: 30px;
-    background-color: $sprintYellow;
+    background-color: $sprintOrange;
     text-align: center;
     border-radius: 5px;
     margin-top: 20px;
@@ -69,7 +69,7 @@
   &-button-small {
     width: 35%;
     height: 25px;
-    background-color: $sprintYellow;
+    background-color: $sprintOrange;
     border-radius: 4px;
     color: $sprintBlack;
     border: 1px solid;
