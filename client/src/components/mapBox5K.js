@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
 
-
 export default function MapBoxMap5K() {
   const [viewport, setViewport] = useState({
     latitude: 49.29875,
     longitude: -123.1204,
     zoom: 13,
-    width: "100vw",
+    width: "100%",
     height: "100%"
   });
 
   return (
-    <div className="map__main-five">
+    <div className="map__main">
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -24,7 +23,6 @@ export default function MapBoxMap5K() {
           trackUserLocation={true}
         />
       </ReactMapGL>
-  
     </div>
   );
 }

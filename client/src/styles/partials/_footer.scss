@@ -5,7 +5,7 @@
   position: relative;
   width: 100vw;
   height: 200px;
-  background-color: $sprintBeige;
+  background-color: $sprintBlue;
 
   &__social {
     &-icons {
@@ -18,7 +18,7 @@
       width: 30%;
     }
     &-heading {
-      color: $sprintOrange;
+      color: $sprintRed;
     }
   }
 }

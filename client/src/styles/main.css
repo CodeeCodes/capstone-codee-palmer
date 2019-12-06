@@ -92,7 +92,7 @@ body a {
 }
 
 .running__page-heading {
-  color: #ffffff;
+  color: #f7f7f7;
   margin: 0;
 }
 
@@ -106,14 +106,14 @@ body a {
 .new__routes-comments-input {
   width: 100%;
   height: 40px;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   border-radius: 5px;
 }
 
 .new__routes-comments-input-name {
   width: 100%;
   height: 40px;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   border-radius: 5px;
 }
 
@@ -180,6 +180,9 @@ body a {
 }
 
 @media only screen and (min-width: 768px) {
+  .running__page-heading {
+    padding-top: 4px;
+  }
   .new__routes {
     width: 100%;
     border: none;
@@ -221,7 +224,6 @@ body a {
 
 .main-flex {
   display: inline-block;
-  width: 100vw;
 }
 
 .main-flex-top {
@@ -235,7 +237,7 @@ body a {
 
 .main__maps {
   height: 300px;
-  width: 100%;
+  width: 300px;
   margin: 0 40px;
   text-align: center;
 }
@@ -251,18 +253,6 @@ body a {
   z-index: 2;
 }
 
-.map__main-marathon {
-  width: 100%;
-  height: 300px;
-  z-index: 2;
-}
-
-.map__main-five {
-  width: 100%;
-  height: 300px;
-  z-index: 2;
-}
-
 @media only screen and (min-width: 768px) {
   .main-flex {
     display: -webkit-box;
@@ -270,23 +260,21 @@ body a {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin: 0 5%;
   }
   .main-flex-top {
-    height: 676px;
+    height: auto;
     width: 100%;
-    margin-top: 0 5%;
     overflow-x: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   .main__maps {
-    height: 400px;
-    width: 100%;
+    height: auto;
+    width: 700px;
     text-align: center;
     margin: 0;
-    margin-right: 50%;
-    margin-bottom: 94px;
   }
   .main__maps-top {
     width: 50%;
@@ -309,34 +297,23 @@ body a {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .map__main {
-    width: 60%;
-    height: 559px;
-    z-index: 2;
-  }
-  .map__main-marathon {
-    width: 100%;
-    height: 559px;
-    z-index: 2;
-  }
-  .map__main-five {
-    width: 100%;
-    height: 559px;
-    z-index: 2;
-  }
 }
 
 @media only screen and (min-width: 1440px) {
   .map__main {
-    margin-right: 5%;
+    width: 800px;
+    height: 600px;
   }
-  .main-flex-top {
-    padding-top: 80px;
+  .main__maps {
+    width: 900px;
+    margin-right: 8%;
+    margin-left: 8%;
   }
   .main__desktop-flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: 0 5%;
   }
   .main__desktop-flexier {
     border-right: gray 1px solid;
@@ -345,7 +322,7 @@ body a {
 
 .races {
   text-align: center;
-  background-color: sprintBeige;
+  background-color: sprintBlue;
   color: #133c55;
   margin: 10px;
   border-radius: 5px;
@@ -393,7 +370,7 @@ body a {
 @media only screen and (min-width: 768px) {
   .races {
     text-align: center;
-    background-color: sprintBeige;
+    background-color: sprintBlue;
     margin: 10px;
     border-radius: 5px;
   }
@@ -531,13 +508,13 @@ body a {
 .new__comments-input-name {
   width: 100%;
   height: 50px;
-  background-color: #133c55;
+  background-color: #f7f7f7;
   color: #133c55;
   border-radius: 5px;
 }
 
 .new__comments-heading-small {
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 .new__comments-page-heading-div {
@@ -556,7 +533,7 @@ body a {
   width: 66%;
   height: 30px;
   background-color: #c02320;
-  color: #ffffff;
+  color: #f7f7f7;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -580,7 +557,7 @@ body a {
 
 .new__comments-name {
   margin: 0;
-  color: #ffffff;
+  color: #133c55;
 }
 
 .new__comments-date {
@@ -592,7 +569,7 @@ body a {
   height: 25px;
   background-color: #c02320;
   border-radius: 4px;
-  color: #ffffff;
+  color: #f7f7f7;
   border: 1px solid;
   -webkit-box-shadow: 1px 1px;
           box-shadow: 1px 1px;
@@ -606,7 +583,6 @@ body a {
   }
   .comments__page-comments {
     width: 75%;
-    margin-left: 5%;
     height: 235px;
   }
   .comments__page-image {
@@ -630,12 +606,15 @@ body a {
   }
   .new__comments-form {
     width: 75%;
-    margin-left: 5%;
   }
   .new__comments-button {
     width: 30%;
-    height: 25px;
-    margin-left: 5%;
+    height: auto;
+    padding: 8px;
+  }
+  .new__comments-button-small {
+    width: 30%;
+    height: 35px;
   }
   .new__comments-button-div {
     display: -webkit-box;
@@ -747,6 +726,45 @@ body a {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 30px 0 0 35px;
+  }
+  .new2__routes-comments {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  .new2__routes-comments-div {
+    height: 175px;
+    overflow: auto;
+  }
+  .new2__routes-comments-input {
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+  }
+  .new2__routes-comments-input-name {
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+  }
+  .new2__routes-comments-button {
+    width: 30%;
+    height: 35px;
+    background-color: #c02320;
+    color: #f7f7f7;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .new2__routes-comments-button-small {
+    width: 26.8%;
+    height: 35px;
+    background-color: #c02320;
+    color: #f7f7f7;
+    border-radius: 5px;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */

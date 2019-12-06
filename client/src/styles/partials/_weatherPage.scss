@@ -7,13 +7,13 @@
   height: 136px;
   margin: 10px 5%;
   border-radius: 5px;
-  background-color: $sprintLightGreen;
+  background-color: $sprintWhite;
 
   &:hover {
     background: none;
     padding: 10px 10px;
     border: 2px solid $sprintBlack;
-    background-color: $sprintOrange;
+    background-color: $sprintRed;
   }
 }
 @include medium {

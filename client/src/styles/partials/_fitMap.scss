@@ -4,7 +4,7 @@
 
 .main-flex {
   display: inline-block;
-  width: 100vw;
+
   &-top {
     height: 400px;
     width: 100%;
@@ -14,7 +14,7 @@
 }
 .main__maps {
   height: 300px;
-  width: 100%;
+  width: 300px;
   margin: 0 40px;
   text-align: center;
   &-image {
@@ -27,16 +27,6 @@
     width: 100%;
     height: 300px;
     z-index: 2;
-    &-marathon {
-      width: 100%;
-      height: 300px;
-      z-index: 2;
-    }
-    &-five {
-      width: 100%;
-      height: 300px;
-      z-index: 2;
-    }
   }
 }
 
@@ -44,21 +34,19 @@
   .main-flex {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 5%;
   }
   .main-flex-top {
-    height: 676px;
+    height: auto;
     width: 100%;
-    margin-top: 0 5%;
     overflow-x: auto;
     display: flex;
   }
   .main__maps {
-    height: 400px;
-    width: 100%;
+    height: auto;
+    width: 700px;
     text-align: center;
     margin: 0;
-    margin-right: 50%;
-    margin-bottom: 94px;
 
     &-top {
       width: 50%;
@@ -78,51 +66,30 @@
     display: flex;
     justify-content: center;
   }
-
-  .map {
-    &__main {
-      width: 60%;
-      height: 559px;
-      z-index: 2;
-      &-marathon {
-        width: 100%;
-        height: 559px;
-        z-index: 2;
-      }
-      &-five {
-        width: 100%;
-        height: 559px;
-        z-index: 2;
-      }
-    }
-  }
 }
-
 @include large {
-
   .map {
     &__main {
-      margin-right: 5%;
-      &-marathon {
-      }
+      width: 800px;
+      height: 600px;
     }
   }
   .main {
     &__maps {
+      width: 900px;
+      margin-right: 8%;
+      margin-left: 8%;
     }
     &-flex-top {
-      padding-top: 80px;
     }
 
     &__desktop {
       &-flex {
         display: flex;
+        margin: 0 5%;
       }
       &-flexier {
         border-right: gray 1px solid;
-        // border-bottom: 2px gray solid;
-        // border-top-right-radius: 10px;
-        // border-bottom-right-radius: 10px;
       }
     }
   }

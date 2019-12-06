@@ -60,6 +60,7 @@ export default function Races() {
         .includes(input.toLowerCase())
     );
     setRaces([searchResult]);
+    e.target.reset();
   }
 
   useEffect(() => {
