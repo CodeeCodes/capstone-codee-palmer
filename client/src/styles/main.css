@@ -519,7 +519,7 @@ body a {
 }
 
 .new__comments-heading-small {
-  color: #f7f7f7;
+  color: #133c55;
 }
 
 .new__comments-page-heading-div {
@@ -657,13 +657,6 @@ body a {
   background-color: #f7f7f7;
 }
 
-.weatherPage:hover {
-  background: none;
-  padding: 10px 10px;
-  border: 2px solid #11151c;
-  background-color: #c02320;
-}
-
 .weather__icons {
   width: 50%;
 }
@@ -737,7 +730,6 @@ body a {
     display: unset;
     border-right: 2px solid gray;
     border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding: 30px 0 0 35px;
   }
   .new2__routes-comments {

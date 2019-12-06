@@ -33,17 +33,17 @@ router.post("/", (req, res) => {
   newComments.save().then(comment => res.json(comment));
 });
 router.delete("/:id", (req, res) => {
-  // console.log(req.params.id);
-  Comment.findById(req.params.id).then(comment =>
-    comment
-      .remove()
-      .then(() => res.json({ success: true }))
-      .catch(er => res.status(404))
+  Comment.findById(req.params.id).then(
+    comment => comment.remove()
+    // .then(() => res.json(comment))
+    // .catch(er => res.status(404))
   );
+  Comment.find()
+    .sort({ date: -1 })
+    .then(comments => res.json(comments));
+  // res.status(200).json(updatedComments);
 });
 router.patch("/:id", (req, res) => {
-  console.log(req.body);
-  console.log(req.params.id);
   Comment.findByIdAndUpdate(
     { _id: req.params.id },
     { $set: { name: req.body.name, comment: req.body.comment } },

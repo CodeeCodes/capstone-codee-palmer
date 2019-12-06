@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import meetUpLogo from "../assets/svg/meetup-vector-logo.svg";
 
@@ -63,12 +63,12 @@ export default function Races() {
     e.target.reset();
   }
 
-  // useEffect(() => {
-  //   getRaces();
-  // }, [setRaces]);
-  // useEffect(() => {
-  //   getRaces();
-  // }, []);
+  useEffect(() => {
+    getRaces();
+  }, [setRaces]);
+  useEffect(() => {
+    getRaces();
+  }, []);
 
   return (
     <div className="races-main">

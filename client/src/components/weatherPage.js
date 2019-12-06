@@ -27,7 +27,10 @@ export default function WeatherPage() {
   const getIcon = () => {
     if (weatherData.weatherData["summary"] === "Snow") {
       return <img src={snow} alt="snow" className="weather__icons" />;
-    } else if (weatherData.weatherData["summary"] === "Drizzle") {
+    } else if (
+      weatherData.weatherData["summary"] === "Drizzle" ||
+      weatherData.weatherData["summary"] === "Possible Drizzle"
+    ) {
       return <img src={rain} alt="rainy" className="weather__icons" />;
     } else if (weatherData.weatherData["summary"] === "Rain") {
       return <img src={rain} alt="rainy" className="weather__icons" />;
@@ -35,6 +38,8 @@ export default function WeatherPage() {
       return <img src={sunny} alt="sunny" className="weather__icons" />;
     } else if (weatherData.weatherData["summary"] === "Overcast") {
       return <img src={cloudy} alt="cloudy" className="weather__icons" />;
+    } else {
+      return <img src={rain} alt="rainy" className="weather__icons" />;
     }
   };
 

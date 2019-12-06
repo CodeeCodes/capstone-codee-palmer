@@ -37,6 +37,7 @@ export default function RunningRoutesFront() {
       .delete(`${routesUrl}/${e.target.id}`)
       .then(res => setRoutes(res.data));
   };
+  console.log(routes);
 
   useEffect(() => {
     newRoutes();
@@ -44,18 +45,19 @@ export default function RunningRoutesFront() {
   let newRoutesDisplay;
   if (routes.length >= 0) {
     newRoutesDisplay = routes.map(function(route) {
-      // let timeStamp = comment.date;
-      // let toDate = new Date(timeStamp).getDate();
-      // let toMonth = new Date(timeStamp).getMonth() + 1;
-      // let toYear = new Date(timeStamp).getFullYear();
-      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
+      let timeStamp = route.date;
+      let newDate = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(timeStamp);
 
       return (
         <div className="new__routes-comments" key={route._id}>
           <div className="new__routes-comments-small-div">
             <h4 className="new__routes-comments-name">{route.name}</h4>
             <p className="new__routes-comments-date">{route.age}</p>
-            <p className="new__routes-comments-date">{route.date}</p>
+            <p className="new__routes-comments-date">{newDate}</p>
           </div>
           <p className="new__-routes-comments-text">{route.comment}</p>
 

@@ -23,9 +23,12 @@ export default function CommentsPage() {
   };
 
   const deleteComment = e => {
-    axios
-      .delete(`${commentsUrl}/${e.target.id}`)
-      .then(res => setComments([...comments, res.data]));
+    axios.delete(`${commentsUrl}/${e.target.id}`).then(res =>
+      setTimeout(() => {
+        console.log(res);
+        setComments([...comments, res.data]);
+      }, 1000)
+    );
   };
 
   const newComments = async () => {
@@ -37,7 +40,6 @@ export default function CommentsPage() {
 
   const updateComment = e => {
     e.preventDefault();
-    console.log(e.target.id);
     axios
       .patch(`${commentsUrl}/${e.target.id}`, {
         name: e.target.user.value,
@@ -47,10 +49,11 @@ export default function CommentsPage() {
         setComments([res.data, ...comments]);
       });
   };
+
   useEffect(() => {
     newComments();
   }, [setComments]);
-  console.log(comments);
+
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
