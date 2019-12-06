@@ -54,17 +54,18 @@ export default function CommentsPage() {
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
-      // let timeStamp = comment.date;
-      // let toDate = new Date(timeStamp).getDate();
-      // let toMonth = new Date(timeStamp).getMonth() + 1;
-      // let toYear = new Date(timeStamp).getFullYear();
-      // let originalDate = toMonth + "/" + toDate + "/" + toYear;
+      let timeStamp = comment.date;
+      let newDate = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(timeStamp);
 
       return (
         <div className="new__comments" key={comment._id}>
           <div className="new__comments-small-div">
             <h4 className="new__comments-name">{comment.name}</h4>
-            {/* <p className="new__comments-date">{originalDate}</p> */}
+            <p className="new__comments-date">{newDate}</p>
           </div>
           <p className="new__comments-text">{comment.comment}</p>
           <div className="new__comments-button-flex">

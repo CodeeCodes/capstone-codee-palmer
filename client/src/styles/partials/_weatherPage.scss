@@ -16,6 +16,13 @@
     background-color: $sprintRed;
   }
 }
+.weather__icons {
+  width: 50%;
+  &-div {
+    height: 50px;
+    width: 100px;
+  }
+}
 @include medium {
   .weatherPage {
     width: 50%;

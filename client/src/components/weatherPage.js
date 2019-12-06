@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import running from "../assets/svg/running.svg";
+import rain from "../assets/svg/rain.svg";
+import cloudy from "../assets/svg/cloudy.svg";
+import sunny from "../assets/svg/sunny.svg";
+import snow from "../assets/svg/snow.svg";
 
 export default function WeatherPage() {
   const [weatherData, setWeatherData] = useState([]);
@@ -17,7 +21,22 @@ export default function WeatherPage() {
 
   useEffect(() => {
     getWeather();
-  }, []);
+  }, [setWeatherData]);
+  console.log(weatherData);
+
+  const getIcon = () => {
+    if (weatherData.weatherData["summary"] === "Snow") {
+      return <img src={snow} alt="snow" className="weather__icons" />;
+    } else if (weatherData.weatherData["summary"] === "Drizzle") {
+      return <img src={rain} alt="rainy" className="weather__icons" />;
+    } else if (weatherData.weatherData["summary"] === "Rain") {
+      return <img src={rain} alt="rainy" className="weather__icons" />;
+    } else if (weatherData.weatherData["summary"] === "Sunny") {
+      return <img src={sunny} alt="sunny" className="weather__icons" />;
+    } else if (weatherData.weatherData["summary"] === "Overcast") {
+      return <img src={cloudy} alt="cloudy" className="weather__icons" />;
+    }
+  };
 
   if (Object.keys(weatherData).length > 0) {
     return (
@@ -25,13 +44,13 @@ export default function WeatherPage() {
         <div className="weather__container">
           <h5 className="weather__temp">Temp:</h5>
           <h5 className="weather__temp">
-            {weatherData.weatherData["temperature"]}
+            {weatherData.weatherData["temperature"] + " " + "F"}
           </h5>
         </div>
         <div className="weather__container">
           <h5 className="weather__temp">Wind speed:</h5>
           <h5 className="weather__temp">
-            {weatherData.weatherData["windSpeed"]}
+            {weatherData.weatherData["windSpeed"] + " " + "MPH"}
           </h5>
         </div>
         <div className="weather__container">
@@ -46,6 +65,7 @@ export default function WeatherPage() {
             {weatherData.weatherData["cloudCover"]}
           </h5>
         </div>
+        <div className="weather__icons-div">{getIcon()}</div>
       </div>
     );
   } else {

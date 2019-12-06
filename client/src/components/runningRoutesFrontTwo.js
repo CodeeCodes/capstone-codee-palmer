@@ -4,7 +4,6 @@ import running from "../assets/svg/running.svg";
 
 export default function RunningRoutesFrontTwo() {
   const routesUrl = "http://localhost:5000/routes";
-  const [show, setShow] = useState(false);
   const [routes, setRoutes] = useState([]);
 
   const newRoutes = async () => {
