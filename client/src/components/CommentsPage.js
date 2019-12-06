@@ -7,6 +7,7 @@ export default function CommentsPage() {
   const commentsUrl = "http://localhost:5000/comments";
   const [comments, setComments] = useState([]);
   const [show, setShow] = useState(false);
+  const [id, setId] = useState();
 
   const uploadNewComment = event => {
     event.preventDefault();
@@ -21,8 +22,8 @@ export default function CommentsPage() {
     event.target.reset();
   };
 
-  const deleteComment = async e => {
-    await axios
+  const deleteComment = e => {
+    axios
       .delete(`${commentsUrl}/${e.target.id}`)
       .then(res => setComments([...comments, res.data]));
   };
@@ -36,8 +37,7 @@ export default function CommentsPage() {
 
   const updateComment = e => {
     e.preventDefault();
-    console.log(e.target.user.value);
-    console.log(e.target.comment.value);
+    console.log(e.target.id);
     axios
       .patch(`${commentsUrl}/${e.target.id}`, {
         name: e.target.user.value,
@@ -50,7 +50,7 @@ export default function CommentsPage() {
   useEffect(() => {
     newComments();
   }, [setComments]);
-
+  console.log(comments);
   let newComment;
   if (comments.length >= 0) {
     newComment = comments.map(function(comment) {
@@ -78,51 +78,17 @@ export default function CommentsPage() {
             <div className="new__comments-button-small">
               <div className="update__page">
                 <p
+                  id={comment._id}
                   variant="secondary"
-                  onClick={() => setShow(true)}
+                  onClick={() => {
+                    setId(comment._id);
+                    setShow(true);
+                  }}
                   className="running__page-heading"
                 >
                   Update
                 </p>
               </div>
-              <Modal
-                show={show}
-                onHide={() => setShow(false)}
-                dialogClassName="modal-100w"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title>Edit Comment</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <form
-                    id={comment._id}
-                    action="/"
-                    method="PATCH"
-                    onSubmit={updateComment}
-                    className="new__comments-form"
-                  >
-                    <h4 className="new__comments-heading-small">Name</h4>
-                    <input
-                      type="text"
-                      name="user"
-                      placeholder="Name"
-                      className="new__comments-input-name"
-                    />
-                    <h4 className="new__comments-heading-small">Comment</h4>
-                    <input
-                      type="text"
-                      name="comment"
-                      placeholder="Comment"
-                      className="new__comments-input"
-                    />
-                    <div className="new__comments-button-div">
-                      <button className="new__comments-button">SAVE</button>
-                    </div>
-                  </form>
-                </Modal.Body>
-              </Modal>
             </div>
           </div>
         </div>
@@ -163,6 +129,44 @@ export default function CommentsPage() {
         </div>
       </form>
       <div className="comments__page-comments">{newComment}</div>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-100w"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Comment</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form
+            id={id}
+            action="/"
+            method="PATCH"
+            onSubmit={updateComment}
+            className="new__comments-form"
+          >
+            <h4 className="new__comments-heading-small">Name</h4>
+            <input
+              type="text"
+              name="user"
+              placeholder="Name"
+              className="new__comments-input-name"
+            />
+            <h4 className="new__comments-heading-small">Comment</h4>
+            <input
+              type="text"
+              name="comment"
+              placeholder="Comment"
+              className="new__comments-input"
+            />
+            <div className="new__comments-button-div">
+              <button className="new__comments-button">SAVE</button>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

@@ -8,27 +8,31 @@ import WeatherPage from "./weatherPage";
 import Comments from "./CommentsPage";
 import RacesPage from "./races";
 import Footer from "./footer";
+import RoutesTwo from "./runningRoutesFrontTwo";
 
 export default function MainContent() {
   return (
     <div className="main">
-      <WeatherPage />
-      <div className="main-flex-top">
-        <div className="main__maps">
-          <h4>Half Marathon</h4>
-          <MapBoxMap />
+      <div className="main__desktop-flex">
+        <div className="main__desktop-flexier">
+          <WeatherPage />
+          <RoutesTwo />
         </div>
-        <div className="main__maps">
-          <h4>10 K</h4>
-          <MapBox10K />
+
+        <div className="main-flex-top">
+          <div className="main__maps">
+            <h4>Half Marathon</h4>
+            <MapBoxMap />
+          </div>
+          <div className="main__maps">
+            <h4>10 K</h4>
+            <MapBox10K />
+          </div>
+          <div className="main__maps">
+            <h4>5 K</h4>
+            <MapBox5K />
+          </div>
         </div>
-        <div className="main__maps">
-          <h4>5 K</h4>
-          <MapBox5K />
-        </div>
-      </div>
-      <div className="main__race-flex">
-        <RunningRoutes />
       </div>
       <div className="main-flex">
         <Comments />

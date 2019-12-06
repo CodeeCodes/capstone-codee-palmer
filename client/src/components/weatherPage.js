@@ -22,34 +22,28 @@ export default function WeatherPage() {
   if (Object.keys(weatherData).length > 0) {
     return (
       <div className="weatherPage">
-        <div>
+        <div className="weather__container">
           <h5 className="weather__temp">Temp:</h5>
           <h5 className="weather__temp">
             {weatherData.weatherData["temperature"]}
           </h5>
         </div>
-        <div>
+        <div className="weather__container">
           <h5 className="weather__temp">Wind speed:</h5>
           <h5 className="weather__temp">
             {weatherData.weatherData["windSpeed"]}
           </h5>
         </div>
-        <div>
+        <div className="weather__container">
           <h5 className="weather__temp">Summary:</h5>
           <h5 className="weather__temp">
             {weatherData.weatherData["summary"]}
           </h5>
         </div>
-        <div>
+        <div className="weather__container">
           <h5 className="weather__temp">Cloud cover:</h5>
           <h5 className="weather__temp">
             {weatherData.weatherData["cloudCover"]}
-          </h5>
-        </div>
-        <div>
-          <h5 className="weather__temp">Temp:</h5>
-          <h5 className="weather__temp">
-            {weatherData.weatherData["pressure"]}
           </h5>
         </div>
       </div>

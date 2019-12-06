@@ -42,12 +42,19 @@ router.delete("/:id", (req, res) => {
   );
 });
 router.patch("/:id", (req, res) => {
+  console.log(req.body);
   console.log(req.params.id);
   Comment.findByIdAndUpdate(
-    req.params.id,
+    { _id: req.params.id },
     { $set: { name: req.body.name, comment: req.body.comment } },
-    { new: true }
+    { new: true },
+    function(err, res) {
+      if (err) {
+        console.log(err);
+        res.json({ msg: "database failure" });
+      }
+    }
   );
-  res.status(200).json({ msg: "work" });
+  console.log("this is the response" + res);
 });
 module.exports = router;

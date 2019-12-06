@@ -23,3 +23,16 @@
     margin-left: 45%;
   }
 }
+@include large {
+  .weatherPage {
+    margin: unset;
+    width: 395px;
+    height: unset;
+    background: unset;
+    display: unset;
+  }
+  .weather__container {
+    display: inline-block;
+    width: 50%;
+  }
+}

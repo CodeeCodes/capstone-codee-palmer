@@ -1,7 +1,7 @@
 .races {
   text-align: center;
   background-color: sprintBeige;
-  color: #d9f0ff;
+  color: $sprintBeige;
   margin: 10px;
   border-radius: 5px;
   margin: 0 5%;
@@ -52,6 +52,10 @@
       margin: 0;
       height: 453px;
       overflow: auto;
+      &-heading {
+        text-align: left;
+        margin-left: 19%;
+      }
     }
   }
 }

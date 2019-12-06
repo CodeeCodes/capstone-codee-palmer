@@ -1,7 +1,6 @@
 .navBar {
   z-index: 3;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   margin-bottom: 10px;
@@ -11,5 +10,15 @@
 
   &__heading {
     color: $sprintOrange;
+  }
+}
+
+@include large {
+  .navBar {
+    height: 60px;
+    margin: unset;
+    &__heading {
+      padding-left: 5%;
+    }
   }
 }

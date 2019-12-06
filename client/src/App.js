@@ -8,6 +8,8 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <div className={`background`}></div>
+
       <NavBar />
       <Switch>
         {/* <Route exact path="/" component={FrontPage} /> */}

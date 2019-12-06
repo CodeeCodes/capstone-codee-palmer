@@ -1,16 +1,51 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import meetUpLogo from "../assets/svg/meetup-vector-logo.svg";
-import { setImmediate } from "timers";
 
 export default function Races() {
   const runUrl = "https://api.meetup.com/VanRun/events";
   const corsURL = "https://cors-anywhere.herokuapp.com/";
   const [races, setRaces] = useState([]);
+  const [racesTwo, setRacesTwo] = useState([]);
 
-  const getRaces = () => {
-    axios.get(`${corsURL}${runUrl}`).then(res => {
-      setRaces(res.data);
+  const getRaces = async () => {
+    await axios.get(`${corsURL}${runUrl}`).then(res => {
+      const races = res.data;
+
+      setRaces(
+        races.map(function(race) {
+          return (
+            <div className="races" key={race.id}>
+              <h3 className="races__text">{race.name}</h3>
+              <h4 className="races__text">{race.local_date}</h4>
+              <a href={race.link}>
+                <img
+                  src={meetUpLogo}
+                  alt="meetup logo"
+                  className="races__main-logo"
+                />
+              </a>
+            </div>
+          );
+        })
+      );
+      setRacesTwo(
+        races.map(function(race) {
+          return (
+            <div className="races" key={race.id}>
+              <h3 className="races__text">{race.name}</h3>
+              <h4 className="races__text">{race.local_date}</h4>
+              <a href={race.link}>
+                <img
+                  src={meetUpLogo}
+                  alt="meetup logo"
+                  className="races__main-logo"
+                />
+              </a>
+            </div>
+          );
+        })
+      );
     });
   };
 
@@ -18,9 +53,11 @@ export default function Races() {
     e.preventDefault();
     e.persist();
     const input = e.target.raceSearch.value;
-    console.log(input);
-    const searchResult = races.filter(obj =>
-      obj.name.toLowerCase().includes(input.toLowerCase())
+
+    const searchResult = racesTwo.filter(obj =>
+      obj.props.children[0].props.children
+        .toLowerCase()
+        .includes(input.toLowerCase())
     );
     setRaces([searchResult]);
   }
@@ -28,23 +65,9 @@ export default function Races() {
   useEffect(() => {
     getRaces();
   }, [setRaces]);
-  console.log(races);
-
-  const renderRacesFront = races.map(function(race) {
-    return (
-      <div className="races" key={race.id}>
-        <h3>{race.name}</h3>
-        <h4>{race.local_date}</h4>
-        <a href={race.link}>
-          <img
-            src={meetUpLogo}
-            alt="meetup logo"
-            className="races__main-logo"
-          />
-        </a>
-      </div>
-    );
-  });
+  useEffect(() => {
+    getRaces();
+  }, []);
 
   return (
     <div className="races-main">
@@ -54,7 +77,7 @@ export default function Races() {
         <input type="text" name="raceSearch" className="races__search-input" />
       </form>
       <div className="races__main">
-        <div className="races">{renderRacesFront}</div>
+        <div className="races">{races}</div>
       </div>
     </div>
   );

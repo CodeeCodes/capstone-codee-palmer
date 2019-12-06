@@ -14,7 +14,6 @@
     }
   }
 }
-
 .new__comments {
   z-index: 1;
   width: 100%;
@@ -23,20 +22,22 @@
   border-radius: 5px;
 
   &-text {
-    color: $sprintWhite;
+    color: $sprintBeige;
   }
   &-input {
     width: 100%;
     height: 100px;
-    background-color: $sprintBeige;
+    background-color: #f7f7f7;
+    padding: 15px 15px 60px 15px;
+    border: 1px solid $mercury;
     border-radius: 5px;
-    color: $sprintWhite;
+    color: black;
 
     &-name {
       width: 100%;
       height: 50px;
       background-color: $sprintBeige;
-      color: $sprintWhite;
+      color: $sprintBeige;
       border-radius: 5px;
     }
   }
@@ -53,7 +54,7 @@
     width: 66%;
     height: 30px;
     background-color: $sprintOrange;
-    color: $sprintBlack;
+    color: $sprintWhite;
     border-radius: 5px;
     margin-top: 20px;
 
@@ -81,7 +82,7 @@
     height: 25px;
     background-color: $sprintOrange;
     border-radius: 4px;
-    color: $sprintBlack;
+    color: $sprintWhite;
     border: 1px solid;
     box-shadow: 1px 1px;
     margin-bottom: 8px;
