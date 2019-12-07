@@ -31,14 +31,13 @@ export default function RunningRoutesFrontTwo() {
     }
   };
   const deleteRoute = async e => {
-    await axios
-      .delete(`${routesUrl}/${e.target.id}`)
-      .then(res => setRoutes(res.data));
+    await axios.delete(`${routesUrl}/${e.target.id}`).then(res => newRoutes());
   };
 
   useEffect(() => {
     newRoutes();
   }, [setRoutes]);
+
   let newRoutesDisplay;
   if (routes.length >= 0) {
     newRoutesDisplay = routes.map(function(route) {
@@ -56,8 +55,8 @@ export default function RunningRoutesFrontTwo() {
             <p className="new2__routes-comments-date">{route.age}</p>
             <p className="new2__routes-comments-date">{newDate}</p>
           </div>
+          <p className="new__-routes-comments-text">{route.route}</p>
           <p className="new__-routes-comments-text">{route.comment}</p>
-
           <button
             id={route._id}
             onClick={deleteRoute}

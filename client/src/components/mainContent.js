@@ -35,14 +35,12 @@ export default function MainContent() {
         </div>
       </div>
       <div className="main-flex">
-        <Comments />
-
-        <RacesPage />
         <div className="comments__page-image-div">
           <img src={runningMain} alt="" className="comments__page-image" />
         </div>
+        <RacesPage />
+        <Comments />
       </div>
-
       <Footer />
     </div>
   );

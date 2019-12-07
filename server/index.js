@@ -28,7 +28,7 @@ mongoose
 const commentsRouter = require("./routes/api/CommentsApi");
 const routesRouter = require("./routes/api/RunningRoutesApi");
 const authRouter = require("./routes/api/Auth");
-// const loginRouter = require("./routes/api/login");
+const loginRouter = require("./routes/api/login");
 
 /// Simple API Documentation
 app.get("/", (req, res) => {
@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 app.use("/comments", commentsRouter);
 app.use("/routes", routesRouter);
 app.use("/register", authRouter);
-app.use("/login", authRouter);
+app.use("/login", loginRouter);
 
 app.listen(PORT, () => {
   console.log(`Now listening on port ${PORT}`);

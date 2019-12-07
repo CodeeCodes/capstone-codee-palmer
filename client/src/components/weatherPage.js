@@ -22,7 +22,6 @@ export default function WeatherPage() {
   useEffect(() => {
     getWeather();
   }, [setWeatherData]);
-  console.log(weatherData);
 
   const getIcon = () => {
     if (weatherData.weatherData["summary"] === "Snow") {

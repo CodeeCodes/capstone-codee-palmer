@@ -35,23 +35,21 @@ const loginValidation = data => {
 router.post("/", async (req, res) => {
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error);
-  console.log(error);
 
   //checking if email exists
   const emailExists = await User.find({
-    email: req.body.email
+    email: req.body.email,
+    password:req.body.password
   });
-
-  if (!emailExists) return res.status(400).send("Email doesn't exist");
-
+  if (!emailExists) return res.status(400).send("Email or password doesn't exist");
   //checking is password is correct
-  // const validPassword = await bcrypt.compare(req.body.password, User.password);
+  // const validPassword = bcrypt.compare(req.body.password, User.password);
   // if (!validPassword) return res.status(400).send(" Password doesn't exist");
+  // // create jwt token and assign it
+  // const token = jwt.sign({ _id: User._id }, tokenSecret);
+  // console.log(validPassword);
 
-  // create jwt token and assign it
-
-  const token = jwt.sign({ _id: User._id }, tokenSecret);
-  res.header("auth-token", token).send("successful");
+  // res.header("auth-token", token).send("successful");
 });
 
 module.exports = router;

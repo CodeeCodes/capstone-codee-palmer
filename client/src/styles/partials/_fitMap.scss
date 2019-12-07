@@ -13,9 +13,8 @@
   }
 }
 .main__maps {
-  height: 300px;
-  width: 300px;
-  margin: 0 40px;
+  height: auto;
+  width: 400px;
   text-align: center;
   &-image {
     width: 90%;
@@ -27,7 +26,7 @@
 }
 .map {
   &__main {
-    width: 100%;
+    width: 400px;
     height: 300px;
     z-index: 2;
   }
@@ -78,6 +77,10 @@
     }
   }
   .main {
+    &-flex {
+      justify-content: space-between;
+      border-top: 1px solid lightgray;
+    }
     &__maps {
       width: 900px;
       margin-right: 8%;
@@ -92,8 +95,8 @@
         margin: 0 5%;
       }
       &-flexier {
-        border-right: gray 1px solid;
-        padding-right: 1%;
+        border-right: 1px solid lightgray;
+        width: 55%;
       }
     }
   }

@@ -42,23 +42,6 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-// Comment.findById({ _id: req.params.id }).then(comment =>
-//   comment.remove().then(() => res.json(Comment))
-// );
-
-//, function(err) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log(Comment);
-//       console.log(res.data);
-//       res.json(Comment);
-//     }
-//   });
-//   console.log("this is the response" + res.data);
-// });
-// .sort({ date: -1 })
-
 router.patch("/:id", (req, res) => {
   Comment.findByIdAndUpdate(
     { _id: req.params.id },

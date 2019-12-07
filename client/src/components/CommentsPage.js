@@ -37,15 +37,13 @@ export default function CommentsPage() {
   };
 
   const updateComment = e => {
-    e.preventDefault();
+    // e.preventDefault();
     axios
       .patch(`${commentsUrl}/${e.target.id}`, {
         name: e.target.user.value,
         comment: e.target.comment.value
       })
-      .then(res => {
-        setComments([res.data, ...comments]);
-      });
+      .then(res => newComments());
   };
 
   useEffect(() => {
@@ -106,6 +104,7 @@ export default function CommentsPage() {
 
   return (
     <div className="comments__page">
+      <h3 className="new__comments-heading">Chatboard</h3>
       <form
         action="/"
         method="POST"

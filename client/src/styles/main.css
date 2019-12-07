@@ -74,6 +74,13 @@ body a {
   background: transparent;
 }
 
+@media only screen and (min-width: 768px) {
+  .front__page-div-One-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .running__page {
   margin: 10px 5%;
   border-radius: 10px;
@@ -236,9 +243,8 @@ body a {
 }
 
 .main__maps {
-  height: 300px;
-  width: 300px;
-  margin: 0 40px;
+  height: auto;
+  width: 400px;
   text-align: center;
 }
 
@@ -252,7 +258,7 @@ body a {
 }
 
 .map__main {
-  width: 100%;
+  width: 400px;
   height: 300px;
   z-index: 2;
 }
@@ -308,6 +314,12 @@ body a {
     width: 800px;
     height: 600px;
   }
+  .main-flex {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-top: 1px solid lightgray;
+  }
   .main__maps {
     width: 900px;
     margin-right: 8%;
@@ -320,8 +332,8 @@ body a {
     margin: 0 5%;
   }
   .main__desktop-flexier {
-    border-right: gray 1px solid;
-    padding-right: 1%;
+    border-right: 1px solid lightgray;
+    width: 55%;
   }
 }
 
@@ -356,7 +368,7 @@ body a {
 }
 
 .races__search {
-  margin: 0px 12%;
+  margin: 0px 25%;
 }
 
 .races__search-input {
@@ -391,8 +403,10 @@ body a {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0;
-    height: 453px;
+    width: 100%;
+    height: 488px;
     overflow: auto;
+    margin-bottom: 37px;
   }
   .races__main-heading {
     text-align: left;
@@ -417,6 +431,7 @@ body a {
 
 .navBar__heading {
   color: #c02320;
+  margin-left: 5%;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -468,6 +483,13 @@ body a {
   background: transparent;
 }
 
+@media only screen and (min-width: 768px) {
+  .front__page-div-One-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .comments__page {
   margin: 10px 5%;
   text-align: center;
@@ -496,7 +518,18 @@ body a {
   border-radius: 5px;
 }
 
+.new__comments-heading {
+  color: #133c55;
+}
+
 .new__comments-text {
+  color: #133c55;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new__comments-date {
   color: #133c55;
 }
 
@@ -560,6 +593,15 @@ body a {
       justify-content: space-around;
 }
 
+.new__comments-small-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .new__comments-name {
   margin: 0;
   color: #133c55;
@@ -587,8 +629,8 @@ body a {
     margin: 0;
   }
   .comments__page-comments {
-    width: 75%;
-    height: 235px;
+    width: 95%;
+    height: 270px;
   }
   .comments__page-image {
     height: 100%;
@@ -610,7 +652,7 @@ body a {
     height: 45px;
   }
   .new__comments-form {
-    width: 75%;
+    width: 95%;
   }
   .new__comments-button {
     width: 35%;
@@ -728,28 +770,35 @@ body a {
 @media only screen and (min-width: 1440px) {
   .running2__page {
     display: unset;
-    border-right: 2px solid gray;
     border-top-right-radius: 10px;
     padding: 30px 0 0 35px;
   }
   .new2__routes-comments {
-    width: 100%;
+    width: 95%;
     margin: 15px 0;
     border-radius: 5px;
     background-color: #f7f7f7;
+  }
+  .new2__routes-comments-small-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .new2__routes-comments-div {
     height: 175px;
     overflow: auto;
   }
   .new2__routes-comments-input {
-    width: 100%;
+    width: 95%;
     height: 40px;
     background-color: #f7f7f7;
     border-radius: 5px;
   }
   .new2__routes-comments-input-name {
-    width: 100%;
+    width: 95%;
     height: 40px;
     background-color: #f7f7f7;
     border-radius: 5px;

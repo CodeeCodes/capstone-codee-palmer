@@ -20,8 +20,14 @@
   background-color: $sprintWhite;
   margin: 15px 0;
   border-radius: 5px;
-
+  &-heading {
+    color: $sprintBlue;
+  }
   &-text {
+    color: $sprintBlue;
+    display: flex;
+  }
+  &-date {
     color: $sprintBlue;
   }
   &-input {
@@ -68,7 +74,8 @@
     }
   }
   &-small-div {
-    // display: flex;
+    display: flex;
+    justify-content: space-between;
   }
   &-name {
     margin: 0;
@@ -93,8 +100,8 @@
     width: 35%;
     margin: 0;
     &-comments {
-      width: 75%;
-      height: 235px;
+      width: 95%;
+      height: 270px;
     }
     &-image {
       height: 100%;
@@ -118,7 +125,7 @@
       }
     }
     &-form {
-      width: 75%;
+      width: 95%;
     }
     &-button {
       width: 35%;

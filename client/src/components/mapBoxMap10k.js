@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import ReactMapGL, { GeolocateControl } from "react-map-gl";
 
-
 export default function MapBoxMap10K() {
   const [viewport, setViewport] = useState({
     latitude: 49.29545,
     longitude: -123.1207,
     zoom: 12,
-    width: "100%",
+    width: "100vw",
     height: "100%"
   });
 
@@ -24,7 +23,6 @@ export default function MapBoxMap10K() {
           trackUserLocation={true}
         />
       </ReactMapGL>
-
     </div>
   );
 }

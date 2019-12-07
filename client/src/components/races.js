@@ -53,7 +53,6 @@ export default function Races() {
     e.preventDefault();
     e.persist();
     const input = e.target.raceSearch.value;
-
     const searchResult = racesTwo.filter(obj =>
       obj.props.children[0].props.children
         .toLowerCase()
@@ -73,7 +72,7 @@ export default function Races() {
   return (
     <div className="races-main">
       {" "}
-      <h2 className="races__main-heading">Upcoming Races</h2>
+      <h2 className="races__main-heading">Upcoming Local Races</h2>
       <form className="races__search" onSubmit={searchRaces}>
         <input type="text" name="raceSearch" className="races__search-input" />
       </form>

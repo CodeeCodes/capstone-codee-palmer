@@ -26,4 +26,12 @@
   }
 }
 @include medium {
+  .front__page {
+    &-div-One {
+      &-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
