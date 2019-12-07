@@ -30,20 +30,12 @@ router.post("/", (req, res) => {
     routes: req.body.route,
     comment: req.body.comment
   });
-  console.log(req.body);
-
   newRoute.save().then(newRoute => res.json(newRoute));
 });
 router.delete("/:id", (req, res) => {
   console.log(req.params.id);
   Routes.findById(req.params.id).then(route =>
-    route
-      .remove()
-      .then(() =>
-        res
-          .json({ success: true })
-          .catch(er => res.status(404).json({ success: false }))
-      )
+    route.remove().then(() => res.json({ success: true }))
   );
 });
 module.exports = router;

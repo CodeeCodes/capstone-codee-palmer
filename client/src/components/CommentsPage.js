@@ -23,12 +23,10 @@ export default function CommentsPage() {
   };
 
   const deleteComment = e => {
-    axios.delete(`${commentsUrl}/${e.target.id}`).then(res =>
-      setTimeout(() => {
-        console.log(res);
-        setComments([...comments, res.data]);
-      }, 1000)
-    );
+    console.log(e.target.id);
+    axios.delete(`${commentsUrl}/${e.target.id}`).then(res => {
+      newComments();
+    });
   };
 
   const newComments = async () => {

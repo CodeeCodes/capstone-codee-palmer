@@ -38,9 +38,9 @@ export default function WeatherPage() {
       return <img src={sunny} alt="sunny" className="weather__icons" />;
     } else if (weatherData.weatherData["summary"] === "Overcast") {
       return <img src={cloudy} alt="cloudy" className="weather__icons" />;
-    } else {
-      return <img src={rain} alt="rainy" className="weather__icons" />;
-    }
+    } else if (weatherData.weatherData["summary"] === "Mostly Cloudy") {
+      return <img src={cloudy} alt="cloudy" className="weather__icons" />;
+    } else return <img src={rain} alt="rainy" className="weather__icons" />;
   };
 
   if (Object.keys(weatherData).length > 0) {
