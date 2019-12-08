@@ -79,12 +79,20 @@
 }
 @include medium {
   .running__page {
+    margin: unset;
+    text-align: center;
+    transition: all 0.5s, ease 0s, linear 0.5s;
+    width: 32%;
+    position: relative;
+    bottom: 97px;
+    left: 53%;
+
     &-heading {
       padding-top: 4px;
     }
   }
   .new__routes {
-    width: 100%;
+    width: 50%;
     border: none;
     &-input {
       width: 100%;
@@ -114,5 +122,13 @@
       &-small {
       }
     }
+  }
+}
+@include large {
+  .running__page {
+    display: none;
+  }
+  .new__routes {
+    width: 100%;
   }
 }

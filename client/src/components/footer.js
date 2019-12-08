@@ -9,26 +9,36 @@ export default function Footer() {
     <div className="footer">
       <div className="footer__social-div">
         <h6 className="footer__social-heading">Created by Codee</h6>
-        <img
-          src={linkedInSvg}
-          alt="linkedin"
+        <a
+          href="https://www.linkedin.com/in/codeepalmer/"
           className="footer__social-icons"
-        />
-        <img
-          src={facebookSvg}
-          alt="facebook"
+        >
+          <img
+            src={linkedInSvg}
+            alt="linkedin"
+            className="footer__social-icons"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/cjpalmer1"
           className="footer__social-icons"
-        />
-        <img
-          src={telegramSvg}
-          alt="telegram"
+        >
+          <img
+            src={facebookSvg}
+            alt="facebook"
+            className="footer__social-icons"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/codeejpalmer/"
           className="footer__social-icons"
-        />
-        <img
-          src={instagramSvg}
-          alt="instagram"
-          className="footer__social-icons"
-        />
+        >
+          <img
+            src={instagramSvg}
+            alt="instagram"
+            className="footer__social-icons"
+          />
+        </a>
       </div>
     </div>
   );

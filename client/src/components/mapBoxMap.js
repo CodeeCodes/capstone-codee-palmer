@@ -6,7 +6,7 @@ export default function MapBoxMap() {
     latitude: 49.2827,
     longitude: -123.1207,
     zoom: 11,
-    width: "100vw",
+    width: "100%",
     height: "100%"
   });
 

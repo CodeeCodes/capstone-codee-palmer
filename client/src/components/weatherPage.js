@@ -39,16 +39,29 @@ export default function WeatherPage() {
       return <img src={cloudy} alt="cloudy" className="weather__icons" />;
     } else if (weatherData.weatherData["summary"] === "Mostly Cloudy") {
       return <img src={cloudy} alt="cloudy" className="weather__icons" />;
+    } else if (weatherData.weatherData["summary"] === "Partly Cloudy") {
+      return <img src={cloudy} alt="cloudy" className="weather__icons" />;
     } else return <img src={rain} alt="rainy" className="weather__icons" />;
+  };
+  const changeTemp = e => {
+    console.log(e.target.innerHTML, weatherData.weatherData["temperature"]);
+    if (e.target.innerHTML === weatherData.weatherData["temperature"]) {
+      return ((weatherData.weatherData["temperature"] - 32) * 5) / 9;
+    }
   };
 
   if (Object.keys(weatherData).length > 0) {
+    console.log(((weatherData.weatherData["temperature"] - 32) * 5) / 9);
     return (
       <div className="weatherPage">
         <div className="weather__container">
           <h5 className="weather__temp">Temp:</h5>
-          <h5 className="weather__temp">
-            {weatherData.weatherData["temperature"] + " " + "F"}
+          <h5 className="weather__temp" onClick={changeTemp}>
+            {(((weatherData.weatherData["temperature"] - 32) * 5) / 9).toFixed(
+              1
+            ) +
+              " " +
+              "C"}
           </h5>
         </div>
         <div className="weather__container">

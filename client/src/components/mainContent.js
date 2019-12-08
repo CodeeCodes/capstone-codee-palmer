@@ -2,7 +2,7 @@ import React from "react";
 import MapBoxMap from "./mapBoxMap";
 import MapBox10K from "./mapBoxMap10k";
 import MapBox5K from "./mapBox5K";
-// import RunningRoutes from "./runningRoutesFront";
+import RunningRoutes from "./runningRoutesFront";
 import runningMain from "../assets/svg/runningMain.svg";
 import WeatherPage from "./weatherPage";
 import Comments from "./CommentsPage";
@@ -18,7 +18,7 @@ export default function MainContent() {
           <WeatherPage />
           <RoutesTwo />
         </div>
-
+        <RunningRoutes />
         <div className="main-flex-top">
           <div className="main__maps">
             <h4 className="main__maps-heading">Half Marathon</h4>
@@ -34,6 +34,7 @@ export default function MainContent() {
           </div>
         </div>
       </div>
+
       <div className="main-flex">
         <div className="comments__page-image-div">
           <img src={runningMain} alt="" className="comments__page-image" />

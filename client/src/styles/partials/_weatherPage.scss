@@ -18,13 +18,13 @@
 }
 @include medium {
   .weatherPage {
-    width: 50%;
-    height: 57px;
-    margin-left: 45%;
+    margin: 0;
+    margin-left: 5%;
   }
 }
 @include large {
   .weatherPage {
+    width: 50%;
     margin: unset;
     width: 395px;
     height: unset;
