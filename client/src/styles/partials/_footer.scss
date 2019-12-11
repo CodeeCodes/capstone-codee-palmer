@@ -9,16 +9,34 @@
 
   &__social {
     &-icons {
-      width: 30%;
-      height: 30px;
+      width: 90%;
+      height: 70px;
     }
     &-div {
       display: flex;
-      height: 50px;
-      width: 30%;
+      height: 70px;
+      width: 40%;
     }
     &-heading {
       color: $sprintRed;
+    }
+  }
+}
+@include medium {
+  .footer {
+    &__social {
+      &-icons {
+        width: 30%;
+        height: 30px;
+      }
+      &-div {
+        display: flex;
+        height: 50px;
+        width: 30%;
+      }
+      &-heading {
+        color: $sprintRed;
+      }
     }
   }
 }

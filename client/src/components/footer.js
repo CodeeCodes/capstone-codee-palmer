@@ -1,7 +1,6 @@
 import React from "react";
 import linkedInSvg from "../assets/svg/linkedin-logo.svg";
 import facebookSvg from "../assets/svg/facebook-logo.svg";
-import telegramSvg from "../assets/svg/telegram-logo.svg";
 import instagramSvg from "../assets/svg/instagram-logo.svg";
 
 export default function Footer() {

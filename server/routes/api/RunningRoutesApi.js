@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
   const newRoute = new Routes({
     name: req.body.name,
     age: req.body.age,
-    routes: req.body.route,
+    route: req.body.route,
     comment: req.body.comment
   });
   newRoute.save().then(newRoute => res.json(newRoute));

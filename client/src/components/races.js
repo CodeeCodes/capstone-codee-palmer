@@ -74,7 +74,12 @@ export default function Races() {
       {" "}
       <h2 className="races__main-heading">Upcoming Local Races</h2>
       <form className="races__search" onSubmit={searchRaces}>
-        <input type="text" name="raceSearch" className="races__search-input" />
+        <input
+          type="text"
+          name="raceSearch"
+          placeholder="Search"
+          className="races__search-input"
+        />
       </form>
       <div className="races__main">
         <div className="races">{races}</div>

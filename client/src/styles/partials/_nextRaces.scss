@@ -24,7 +24,9 @@
     margin: 0px 25%;
 
     &-input {
-      width: 79%;
+      width: 100%;
+      border: 2px solid $sprintRed;
+      padding-left: 10px;
 
       &:hover {
         border: 3px solid $sprintRed;

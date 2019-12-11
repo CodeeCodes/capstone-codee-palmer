@@ -22,6 +22,7 @@ export default function RunningRoutesFrontTwo() {
         .post(routesUrl, {
           name: event.target.name.value,
           age: event.target.age.value,
+          route: event.target.route.value,
           comment: event.target.comment.value
         })
         .then(res => {
@@ -52,11 +53,11 @@ export default function RunningRoutesFrontTwo() {
         <div className="new2__routes-comments" key={route._id}>
           <div className="new2__routes-comments-small-div">
             <h4 className="new2__routes-comments-name">{route.name}</h4>
-            <p className="new2__routes-comments-date">{route.age}</p>
+            <p className="new2__routes-comments-age">{route.age}</p>
             <p className="new2__routes-comments-date">{newDate}</p>
           </div>
-          <p className="new__-routes-comments-text">{route.route}</p>
-          <p className="new__-routes-comments-text">{route.comment}</p>
+          <p className="new2__routes-comments-route">{route.route}</p>
+          <p className="new2__routes-comments-text">{route.comment}</p>
           <button
             id={route._id}
             onClick={deleteRoute}
@@ -74,6 +75,7 @@ export default function RunningRoutesFrontTwo() {
       </div>
     );
   }
+  console.log(routes);
 
   return (
     <>

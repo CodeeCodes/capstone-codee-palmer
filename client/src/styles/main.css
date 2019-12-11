@@ -404,7 +404,9 @@ body a {
 }
 
 .races__search-input {
-  width: 79%;
+  width: 100%;
+  border: 2px solid #c02320;
+  padding-left: 10px;
 }
 
 .races__search-input:hover {
@@ -671,6 +673,11 @@ body a {
   .new__comments {
     width: 100%;
   }
+  .new__comments-text {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
   .new__comments-input {
     width: 100%;
     height: 95px;
@@ -697,6 +704,7 @@ body a {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    margin-bottom: 10px;
   }
   .new__comments-page-heading-div {
     display: -webkit-box;
@@ -775,20 +783,37 @@ body a {
 }
 
 .footer__social-icons {
-  width: 30%;
-  height: 30px;
+  width: 90%;
+  height: 70px;
 }
 
 .footer__social-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 50px;
-  width: 30%;
+  height: 70px;
+  width: 40%;
 }
 
 .footer__social-heading {
   color: #c02320;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer__social-icons {
+    width: 30%;
+    height: 30px;
+  }
+  .footer__social-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    width: 30%;
+  }
+  .footer__social-heading {
+    color: #c02320;
+  }
 }
 
 .running2__page {
