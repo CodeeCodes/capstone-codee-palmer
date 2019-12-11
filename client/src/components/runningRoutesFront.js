@@ -24,6 +24,7 @@ export default function RunningRoutesFront() {
         .post(routesUrl, {
           name: event.target.name.value,
           age: event.target.age.value,
+          route: event.target.route.value,
           comment: event.target.comment.value
         })
         .then(res => {
@@ -57,8 +58,8 @@ export default function RunningRoutesFront() {
             <p className="new__routes-comments-date">{route.age}</p>
             <p className="new__routes-comments-date">{newDate}</p>
           </div>
+          <p className="new__-routes-comments-text">{route.route}</p>
           <p className="new__-routes-comments-text">{route.comment}</p>
-
           <button
             id={route._id}
             onClick={deleteRoute}
