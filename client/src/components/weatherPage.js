@@ -44,14 +44,11 @@ export default function WeatherPage() {
     } else return <img src={rain} alt="rainy" className="weather__icons" />;
   };
   const changeTemp = e => {
-    console.log(e.target.innerHTML, weatherData.weatherData["temperature"]);
     if (e.target.innerHTML === weatherData.weatherData["temperature"]) {
       return ((weatherData.weatherData["temperature"] - 32) * 5) / 9;
     }
   };
-
   if (Object.keys(weatherData).length > 0) {
-    console.log(((weatherData.weatherData["temperature"] - 32) * 5) / 9);
     return (
       <div className="weatherPage">
         <div className="weather__container">

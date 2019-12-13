@@ -36,7 +36,6 @@ export default function RunningRoutesFront() {
   const deleteRoute = async e => {
     await axios.delete(`${routesUrl}/${e.target.id}`).then(res => newRoutes());
   };
-  console.log(routes);
 
   useEffect(() => {
     newRoutes();

@@ -1,7 +1,7 @@
 import React from "react";
 import MainContent from "./components/mainContent";
 import NavBar from "./components/NavBar";
-import FrontPage from "./components/frontPage";
+// import FrontPage from "./components/frontPage";
 
 import { Switch, Route } from "react-router-dom";
 

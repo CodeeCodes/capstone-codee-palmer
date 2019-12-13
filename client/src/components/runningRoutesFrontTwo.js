@@ -75,7 +75,6 @@ export default function RunningRoutesFrontTwo() {
       </div>
     );
   }
-  console.log(routes);
 
   return (
     <>
